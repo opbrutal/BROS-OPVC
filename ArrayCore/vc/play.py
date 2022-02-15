@@ -106,8 +106,8 @@ async def play(client, m: Message):
             if chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await TheVenomXD.delete()
-                    caption="**Playing In {chat_id}**",
-                )
+                caption="**Playing In {chat_id}**",
+                
             else:
                 await call_py.join_group_call(
                     chat_id,
@@ -118,8 +118,8 @@ async def play(client, m: Message):
                 )
                 add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await TheVenomXD.delete()
-                    caption="**Playing In {chat_id}**",
-                )
+                caption="**Playing In {chat_id}**",
+                
 
     else:
         if len(m.command) < 2:
@@ -148,10 +148,8 @@ async def play(client, m: Message):
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                         await TheVenomXD.delete()
-                            caption=f"""
-**Playing In {chat_id}**
-""",
-                        )
+                        caption=f"""**Playing In {chat_id}**""",
+                        
                     else:
                         try:
                             await call_py.join_group_call(
@@ -163,10 +161,8 @@ async def play(client, m: Message):
                             )
                             add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                             await TheVenomXD.delete()
-                                caption=f"""
-**Playing In {chat_id}**
-""",
-                            )
+                            caption=f"""**Playing In {chat_id}**""",
+                            
                         except Exception as ep:
                             await TheVenomXD.edit(f"`{ep}`")
 
@@ -204,10 +200,7 @@ async def vplay(client, m: Message):
                 pos = add_to_queue(chat_id, songname, dl, link, "Video", Q)
                 await TheVenomXD.delete()
                 # await m.reply_to_message.delete()
-                    caption=f"""
-**Playing In {chat_id}**
-""",
-                )
+                caption=f"""**Playing In {chat_id}**""",
             else:
                 if Q == 720:
                     hmmm = HighQualityVideo()
@@ -222,17 +215,13 @@ async def vplay(client, m: Message):
                 )
                 add_to_queue(chat_id, songname, dl, link, "Video", Q)
                 await TheVenomXD.delete()
-                    caption=f"""
-**Playing In {chat_id}**
-""",
-                )
-
-    else:
-        if len(m.command) < 2:
+                caption=f"""**Playing In {chat_id}**""",
+        else:
+         if len(m.command) < 2:
             await m.reply(
                 "**Reply to Audio File or provide something for Searching ...**"
             )
-        else:
+         else:
             await m.delete()
             TheVenomXD = await m.reply("** Searching...")
             query = m.text.split(None, 1)[1]
@@ -260,10 +249,7 @@ async def vplay(client, m: Message):
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
                         await TheVenomXD.delete()
-                            caption=f"""
-**Playing In {chat_id}**
-""",
-                        )
+                        caption=f"""**Playing In {chat_id}**""",
                     else:
                         try:
                             await call_py.join_group_call(
@@ -273,10 +259,8 @@ async def vplay(client, m: Message):
                             )
                             add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
                             await TheVenomXD.delete()
-                                caption=f"""
-**Playing In {chat_id}**
-""",
-                            )
+                            caption=f"""**Playing In {chat_id}**""",
+                            
                         except Exception as ep:
                             await TheVenomXD.edit(f"`{ep}`")
 
