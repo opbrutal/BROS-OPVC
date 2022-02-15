@@ -106,9 +106,7 @@ async def play(client, m: Message):
             if chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await TheVenomXD.delete()
-                    caption=f"""
-**Playing In {chat_id}**
-""",
+                    caption="**Playing In {chat_id}**",
                 )
             else:
                 await call_py.join_group_call(
@@ -120,9 +118,7 @@ async def play(client, m: Message):
                 )
                 add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await TheVenomXD.delete()
-                    caption=f"""
-**Playing In {chat_id}**
-""",
+                    caption="**Playing In {chat_id}**",
                 )
 
     else:
