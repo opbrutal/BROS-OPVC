@@ -106,7 +106,6 @@ async def play(client, m: Message):
             if chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await TheVenomXD.delete()
-                # await m.reply_to_message.delete()
                     caption=f"""
 **Playing In {chat_id}**
 """,
@@ -121,7 +120,6 @@ async def play(client, m: Message):
                 )
                 add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await TheVenomXD.delete()
-                # await m.reply_to_message.delete()
                     caption=f"""
 **Playing In {chat_id}**
 """,
@@ -154,7 +152,6 @@ async def play(client, m: Message):
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                         await TheVenomXD.delete()
-                        # await m.reply_to_message.delete()
                             caption=f"""
 **Playing In {chat_id}**
 """,
@@ -170,7 +167,6 @@ async def play(client, m: Message):
                             )
                             add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                             await TheVenomXD.delete()
-                            # await m.reply_to_message.delete()
                                 caption=f"""
 **Playing In {chat_id}**
 """,
@@ -230,7 +226,6 @@ async def vplay(client, m: Message):
                 )
                 add_to_queue(chat_id, songname, dl, link, "Video", Q)
                 await TheVenomXD.delete()
-                # await m.reply_to_message.delete
                     caption=f"""
 **Playing In {chat_id}**
 """,
@@ -269,7 +264,6 @@ async def vplay(client, m: Message):
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
                         await TheVenomXD.delete()
-                        # await m.reply_to_message.del
                             caption=f"""
 **Playing In {chat_id}**
 """,
@@ -283,7 +277,6 @@ async def vplay(client, m: Message):
                             )
                             add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
                             await TheVenomXD.delete()
-                            # await m.reply_to_message.delete()
                                 caption=f"""
 **Playing In {chat_id}**
 """,
