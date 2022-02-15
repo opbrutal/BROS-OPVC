@@ -27,5 +27,5 @@ else:
     grp = False
 
 GRPPLAY = grp
-bot = Client(SESSION, API_ID, API_HASH, ArrayCore=dict(root="plugins"))
+bot = Client(SESSION, API_ID, API_HASH, ArrayCore=dict(root="ArrayCore"))
 call_py = PyTgCalls(bot)
