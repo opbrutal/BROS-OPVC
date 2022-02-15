@@ -61,7 +61,7 @@ async def pause(client, m: Message):
         try:
             await call_py.pause_stream(chat_id)
             await m.reply(
-                f"**Paued In {chat_id}**
+                f"**Paued In {chat_id}**"
             )
         except Exception as e:
             await m.reply(f"**ERROR** \n`{e}`")
