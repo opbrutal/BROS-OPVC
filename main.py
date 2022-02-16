@@ -5,12 +5,12 @@ from pytgcalls import idle as pyidle
 from config import bot, call_py
 from os import environ 
 
-api_id = int(environ["API_ID"])
-api_hash = environ["API_HASH"]
-session = environ["SESSION"]
-group_mode = environ["GROUP_MODE"]
-hndlr = environ["HNDLR"]
-sudo_users = environ["SUDO_USERS"]
+API_ID = int(environ["API_ID"])
+API_HASH = environ["API_HASH"]
+SESSION = environ["SESSION"]
+GROUP_MODE = environ["GROUP_MODE"]
+HNDLR = environ["HNDLR"]
+SUDO_USERS = environ["SUDO_USERS"]
 
 plugins = dict(
   root="ArrayCore",
