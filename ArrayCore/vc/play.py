@@ -169,7 +169,7 @@ async def play(client, m: Message):
                             await TheVenomXD.edit(f"`{ep}`")
 
 
-@Client.on_message(filters.command("pvideo", HNDLR) & filters.user(SUDO))
+@Client.on_message(filters.command("pvideo", HNDLR) & filters.user(SUDO_USERS))
 async def vplay(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
     replied = m.reply_to_message
