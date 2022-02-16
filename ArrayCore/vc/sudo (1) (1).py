@@ -7,6 +7,7 @@ Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 sudousers = os.environ.get("SUDO_USERS", None)
 
+Var = Config
 
 @Client.on_message(filters.command(["sudo"], prefixes=f"{HNDLR}"))
 async def sudo(event):
