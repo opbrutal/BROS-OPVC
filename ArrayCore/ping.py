@@ -29,7 +29,7 @@ async def _human_time_duration(seconds):
     return ', '.join(parts)
 
 
-@Client.on_message(filters.command("play", HNDLR) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command("ping", HNDLR) & filters.user(SUDO_USERS))
 async def ping(client, m: Message):
    start = time()
    current_time = datetime.utcnow()
@@ -46,7 +46,7 @@ async def restart(client, m: Message):
    # You probably don't need it but whatever
    quit()
 
-@Client.on_message(contact_filter & filters.command(['help'], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command("help", HNDLR) & filters.user(SUDO_USERS))
 async def help(client, m: Message):
    HELP = f"""
 Help Menu For TgVcUser By [Akash](https://t.me/TheVenomXD).
