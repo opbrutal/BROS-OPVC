@@ -20,9 +20,8 @@ plugins = dict(
   ]
 )
 
-bot.start()
-print("TgVcUsers On Action Do Visit @Suzune_Support")
-call_py.start()
-print("TgVcUsers Client On Action Do Visit @Suzune_Support")
-pyidle()
+app.start()
+print('Bot On Action Do Visit @Suzune_Support For Help & Support')
 idle()
+app.stop()
+print('\n Bot Stopped Certainly)
