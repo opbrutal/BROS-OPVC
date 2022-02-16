@@ -87,7 +87,7 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command("play", HNDLR) & filters.user(SUDO_USERS))
 async def play(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
     replied = m.reply_to_message
@@ -169,7 +169,7 @@ async def play(client, m: Message):
                             await TheVenomXD.edit(f"`{ep}`")
 
 
-@Client.on_message(filters.command(["viuviu"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command("pvideo", HNDLR) & filters.user(SUDO))
 async def vplay(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
     replied = m.reply_to_message
@@ -267,7 +267,7 @@ async def vplay(client, m: Message):
                             await TheVenomXD.edit(f"`{ep}`")
 
 
-@Client.on_message(filters.command(["list", "queue"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command("list", HNDLR) & filters.user(SUDO_USERS))
 async def playlist(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
     chat_id = m.chat.id
