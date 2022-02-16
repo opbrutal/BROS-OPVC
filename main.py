@@ -20,6 +20,8 @@ plugins = dict(
   ]
 )
 
+app = Client(SESSION, API_ID, API_HASH, HNDLR, GROUP_MODE, ArrayCore=PLUGINS)
+
 app.start()
 print('Bot On Action Do Visit @Suzune_Support For Help & Support')
 idle()
