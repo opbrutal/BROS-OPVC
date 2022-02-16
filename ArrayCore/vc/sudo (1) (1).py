@@ -6,7 +6,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 heroku_api = "https://api.heroku.com"
 sudousers = os.environ.get("SUDO_USERS", None)
 
-Var = Config
+
 
 @Client.on_message(filters.command(["sudo"], prefixes=f"{HNDLR}"))
 async def sudo(event):
