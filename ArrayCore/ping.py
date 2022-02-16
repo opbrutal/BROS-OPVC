@@ -29,7 +29,7 @@ async def _human_time_duration(seconds):
     return ', '.join(parts)
 
 
-@Client.on_message(contact_filter & filters.command(['ping'], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command("play", HNDLR) & filters.user(SUDO_USERS))
 async def ping(client, m: Message):
    start = time()
    current_time = datetime.utcnow()
