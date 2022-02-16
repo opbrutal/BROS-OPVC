@@ -12,7 +12,7 @@ GROUP_MODE = environ["GROUP_MODE"]
 HNDLR = environ["HNDLR"]
 SUDO_USERS = environ["SUDO_USERS"]
 
-plugins = dict(
+ArrayCore = dict(
   root="ArrayCore",
   include=[
     "vc.player",
