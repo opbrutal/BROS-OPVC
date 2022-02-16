@@ -1,5 +1,5 @@
 import os
-
+from pyrogram import Client 
 import heroku3
 from telethon.tl.functions.users import GetFullUserRequest
 
