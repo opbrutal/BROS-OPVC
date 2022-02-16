@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from pyrogram import Client, filters
 from pytgcalls import PyTgCalls
+from os import getenv
 
 # For Local Deploy
 if os.path.exists(".env"):
