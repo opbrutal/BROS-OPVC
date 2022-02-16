@@ -3,6 +3,7 @@ from pyrogram import Client, idle
 from pytgcalls import PyTgCalls
 from pytgcalls import idle as pyidle
 from config import bot, call_py
+from os import environ 
 
 api_id = int(environ["API_ID"])
 api_hash = environ["API_HASH"]
