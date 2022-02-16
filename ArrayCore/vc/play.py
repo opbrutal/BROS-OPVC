@@ -19,6 +19,12 @@ from youtubesearchpython import VideosSearch
 from utils import CHAT_TITLE, gen_thumb
 from ArrayCore.vc.queues import QUEUE, add_to_queue, get_queue
 
+running = False  # Tells if the queue is running or not
+CLIENT_TYPE = pytgcalls.GroupCallFactory.MTPROTO_CLIENT_TYPE.PYROGRAM
+PLAYOUT_FILE = "input.raw"
+PLAY_LOCK = asyncio.Lock()
+OUTGOING_AUDIO_BITRATE_KBIT = BITRATE
+
 # music player
 def ytsearch(query):
     try:
@@ -83,6 +89,42 @@ async def ytdl(link):
         return 1, stdout.decode().split("\n")[0]
     else:
         return 0, stderr.decode()
+
+@Client.on_message(filters.command(["join"], prefixes=f"{HNDLR}"))
+async def joinvc(_, message, manual=False):
+    if "call" in db:
+        return await message.reply_text(
+            "__**Bot Is Already In The VC**__"
+        )
+    os.popen(f"cp etc/sample_input.raw {PLAYOUT_FILE}")
+    vc = pytgcalls.GroupCallFactory(
+        app, CLIENT_TYPE, OUTGOING_AUDIO_BITRATE_KBIT
+    ).get_file_group_call(PLAYOUT_FILE)
+    db["call"] = vc
+    try:
+        await vc.start(CHAT_ID)
+    except Exception:
+        peer = await app.resolve_peer(CHAT_ID)
+        startVC = CreateGroupCall(
+            peer=InputPeerChannel(
+                channel_id=peer.channel_id,
+                access_hash=peer.access_hash,
+            ),
+            random_id=app.rnd_id() // 9000000000,
+        )
+        try:
+            await app.send(startVC)
+            await vc.start(CHAT_ID)
+        except ChatAdminRequired:
+            del db["call"]
+            return await message.reply_text(
+                "Make me admin with message delete and vc manage permission"
+            )
+    await message.reply_text(
+        "__**Joined The Voice Chat.**__ \n\n**Note:** __If you can't hear anything,"
+        + " Send /leavevc and then /joinvc again.__"
+    )
+    await message.delete()
 
 
 @Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
