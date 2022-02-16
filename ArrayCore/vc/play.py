@@ -20,11 +20,6 @@ from youtubesearchpython import VideosSearch
 from utils import CHAT_TITLE, gen_thumb
 from ArrayCore.vc.queues import QUEUE, add_to_queue, get_queue
 
-running = False  # Tells if the queue is running or not
-CLIENT_TYPE = pytgcalls.GroupCallFactory.MTPROTO_CLIENT_TYPE.PYROGRAM
-PLAYOUT_FILE = "input.raw"
-PLAY_LOCK = asyncio.Lock()
-OUTGOING_AUDIO_BITRATE_KBIT = BITRATE
 
 # music player
 def ytsearch(query):
