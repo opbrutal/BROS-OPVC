@@ -5,7 +5,7 @@ from config import bot, call_py, HNDLR, contact_filter
 from ArrayCore.vc.handlers import skip_current_song, skip_item
 from ArrayCore.vc.queues import QUEUE, clear_queue
 
-@Client.on_message(contact_filter & filters.command(['skip'], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command("skip", HNDLR) & filters.user(SUDO_USERS))
 async def skip(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
@@ -38,7 +38,7 @@ async def skip(client, m: Message):
             await m.reply(OP)        
       
 
-@Client.on_message(contact_filter & filters.command(['end', 'stop'], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command("stop", HNDLR) & filters.user(SUDO_USERS))
 async def stop(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
@@ -53,7 +53,7 @@ async def stop(client, m: Message):
         await m.reply("**Nothing is playing !**")
 
    
-@Client.on_message(contact_filter & filters.command(['pause'], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command("pause", HNDLR) & filters.user(SUDO_USERS))
 async def pause(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
@@ -69,7 +69,7 @@ async def pause(client, m: Message):
         await m.reply("**Nothing is playing!**")
       
 
-@Client.on_message(contact_filter & filters.command(['resume'], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command("resume", HNDLR) & filters.user(SUDO_USERS))
 async def resume(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
