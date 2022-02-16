@@ -4,7 +4,7 @@ import asyncio
 from pyrogram import Client
 from pyrogram import filters
 from pyrogram.types import Message
-from config import bot, call_py, HNDLR, contact_filter
+from config import bot, call_py, HNDLR, contact_filter, SUDO_USERS
 from time import time
 from datetime import datetime
 
