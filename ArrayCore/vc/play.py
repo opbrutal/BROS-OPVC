@@ -2,7 +2,7 @@ import os
 import re
 import asyncio
 from pyrogram import Client
-from config import bot, call_py, HNDLR, contact_filter, GRPPLAY
+from config import bot, call_py, HNDLR, contact_filter, GRPPLAY, SUDO_USERS 
 from pyrogram import filters
 from pyrogram.types import Message
 import pytgcalls
