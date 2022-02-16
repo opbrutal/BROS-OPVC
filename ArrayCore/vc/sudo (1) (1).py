@@ -3,6 +3,7 @@ from pyrogram import Client
 import heroku3
 from telethon.tl.functions.users import GetFullUserRequest
 from pyrogram import filters
+from config import bot, call_py, HNDLR, contact_filter, SUDO_USERS
 
 heroku_api = "https://api.heroku.com"
 sudousers = os.environ.get("SUDO_USERS", None)
