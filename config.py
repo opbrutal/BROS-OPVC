@@ -17,7 +17,7 @@ GROUP_MODE = os.getenv("GROUP_MODE", "True")
 SUDO_USERS = list(map(int, getenv("SUDO_USER","")
 
 
-contact_filter = filters.create(
+contact_filters = filters.create(
     lambda _, __, message:
     (message.from_user and message.from_user.is_contact) or message.outgoing
 )
