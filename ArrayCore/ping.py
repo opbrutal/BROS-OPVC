@@ -39,7 +39,7 @@ async def ping(client, m: Message):
    uptime = await _human_time_duration(int(uptime_sec))
    await m_reply.edit(f"`{delta_ping * 1000:.3f} ms` \n**Uptime ⏳** - `{uptime}`")
 
-@Client.on_message(contact_filter & filters.command(['restart'], prefixes=f"{HNDLR}"))
+@Client.on_message(contact_filter & filters.command(['restart'], prefixes=f"{HNDLR}"& filters.user(SUDO_USERS)))
 async def restart(client, m: Message):
    await m.reply("`Restarting...`")
    os.execl(sys.executable, sys.executable, *sys.argv)
