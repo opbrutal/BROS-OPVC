@@ -52,7 +52,8 @@ async def help(client, m: Message):
 Help Menu For TgVcUser By [Akash](https://t.me/TheVenomXD).
 Use Your Command HNDLR To Use It I Am Giving . As Default
 
-.play - To Play A Audio
+.play - To Play A Audio File
+.pvideo - To Play Video(mp4) [UNSER MAINTENANCE]
 .skip - To Skip 
 .list - For Queued PlayList
 .ping - Check I'm Alive or what
