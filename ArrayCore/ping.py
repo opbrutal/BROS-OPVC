@@ -29,7 +29,7 @@ async def _human_time_duration(seconds):
     return ', '.join(parts)
 
 
-@Client.on_message(filters.command("ping", HNDLR) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command(["ping"], prefixes=f"{HNDLR}"))
 async def ping(client, m: Message):
    start = time()
    current_time = datetime.utcnow()
@@ -39,21 +39,21 @@ async def ping(client, m: Message):
    uptime = await _human_time_duration(int(uptime_sec))
    await m_reply.edit(f"`{delta_ping * 1000:.3f} ms` \n**Uptime ⏳** - `{uptime}`")
 
-@Client.on_message(filters.command("restart", HNDLR) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command(["restart"], prefixes=f"{HNDLR}"))
 async def restart(client, m: Message):
    await m.reply("`Restarting...`")
    os.execl(sys.executable, sys.executable, *sys.argv)
    # You probably don't need it but whatever
    quit()
 
-@Client.on_message(filters.command("help", HNDLR) & filters.user(SUDO_USERS))
+
 async def help(client, m: Message):
    HELP = f"""
 Help Menu For TgVcUser By [Akash](https://t.me/TheVenomXD).
 Use Your Command HNDLR To Use It I Am Giving . As Default
 
 .play - To Play A Audio File
-.pvideo - To Play Video(mp4) [UNSER MAINTENANCE]
+.vplay - To Play Video(mp4) [UNDER MAINTENANCE]
 .skip - To Skip 
 .list - For Queued PlayList
 .ping - Check I'm Alive or what
