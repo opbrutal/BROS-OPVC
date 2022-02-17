@@ -168,7 +168,7 @@ async def play(client, m: Message):
                             await TheVenomXD.edit(f"`{ep}`")
 
 
-@Client.on_message(filters.command("vply", HNDLR) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command(["vplay"], prefixes=f"{HNDLR}"))
 async def vplay(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
     replied = m.reply_to_message
@@ -266,7 +266,7 @@ async def vplay(client, m: Message):
                             await TheVenomXD.edit(f"`{ep}`")
 
 
-@Client.on_message(filters.command("list", HNDLR) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command(["playlist"], prefixes=f"{HNDLR}"))
 async def playlist(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
     chat_id = m.chat.id
