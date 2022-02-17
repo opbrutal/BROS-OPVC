@@ -87,7 +87,7 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@Client.on_message(filters.command("play", HNDLR) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command("ply", HNDLR) & filters.user(SUDO_USERS))
 async def play(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
     replied = m.reply_to_message
@@ -169,7 +169,7 @@ async def play(client, m: Message):
                             await TheVenomXD.edit(f"`{ep}`")
 
 
-@Client.on_message(filters.command("pvideo", HNDLR) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command("vply", HNDLR) & filters.user(SUDO_USERS))
 async def vplay(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
     replied = m.reply_to_message
