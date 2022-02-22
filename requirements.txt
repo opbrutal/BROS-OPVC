@@ -4,7 +4,7 @@ py-tgcalls==0.8.2
 telegraph
 gTTS
 googletrans==4.0.0rc1
-yt_dlp
+git+https://github.com/yt-dlp/yt-dlp@master
 asyncio
 requests
 aiohttp
