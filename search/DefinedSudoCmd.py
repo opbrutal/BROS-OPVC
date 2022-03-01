@@ -1,7 +1,5 @@
 from ArrayCore import SUDO_LIST
 
-from telethon.tl.functions.messages import GetPeerDialogsRequest
-
 ENV = bool(os.environ.get("ENV", False))
 if ENV:
     from userbot.uniborgConfig import Config
