@@ -7,7 +7,7 @@ from pyrogram.types import Message
 from config import bot, call_py, HNDLR, contact_filter, SUDO_USERS
 from time import time
 from datetime import datetime
-from search.DefinedSudoCmd.py import sudo_cmd
+from search.DefinedSudoCmd import sudo_cmd
 # System Uptime
 START_TIME = datetime.utcnow()
 TIME_DURATION_UNITS = (
