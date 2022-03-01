@@ -2,7 +2,7 @@ from ArrayCore import SUDO_LIST
 import os 
 import inspect
 from pathlib import Path
-import config
+import config as Config
 
 def sudo_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
