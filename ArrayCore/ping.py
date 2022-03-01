@@ -46,7 +46,7 @@ async def restart(client, m: Message):
    # You probably don't need it but whatever
    quit()
 
-
+@Client.on_message(sudo_cmd(outgoing=True, pattern="help", allow_sudo=True))
 async def help(client, m: Message):
    HELP = f"""
 Help Menu For TgVcUser By [Akash](https://t.me/TheVenomXD).
