@@ -1,4 +1,5 @@
 from ArrayCore import SUDO_LIST
+import os
 
 ENV = bool(os.environ.get("ENV", False))
 if ENV:
