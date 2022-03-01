@@ -1,13 +1,5 @@
 from ArrayCore import SUDO_LIST
-import os
-
-ENV = bool(os.environ.get("ENV", False))
-if ENV:
-    from userbot.uniborgConfig import Config
-else:
-    if os.path.exists("config.py"):
-        from config import Development as Config
-        
+import os 
 
 def sudo_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
