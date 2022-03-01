@@ -15,6 +15,7 @@ SESSION = os.getenv("SESSION")
 HNDLR = os.getenv("HNDLR", "!")
 GROUP_MODE = os.getenv("GROUP_MODE", "True")
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "")))
+SUDO_HNDLR = os.environ.get("SUDO_HNDLR", r"!")
 
                       
 contact_filter = filters.create(
