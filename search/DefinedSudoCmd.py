@@ -1,5 +1,6 @@
 from ArrayCore import SUDO_LIST
 import os 
+import inspect
 
 def sudo_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
