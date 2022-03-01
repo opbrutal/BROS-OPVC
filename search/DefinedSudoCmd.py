@@ -3,6 +3,7 @@ import os
 import inspect
 from pathlib import Path
 import config as Config
+import re
 
 def sudo_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
