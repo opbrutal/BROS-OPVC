@@ -34,7 +34,7 @@ def sudo_cmd(pattern=None, command=None, **args):
                 reg = Config.SUDO_HNDLR[1]
             elif len(Config.SUDO_HNDLR) == 1:
                 darkreg = "^\\" + Config.SUDO_HNDLR
-                reg = Config.COMMAND_HAND_LER
+                reg = Config.HNDLR
             args["pattern"] = re.compile(darkreg + pattern)
             if command is not None:
                 cmd = reg + command
