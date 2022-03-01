@@ -16,3 +16,4 @@ pillow
 python-arq
 youtube-search-python==1.4.6
 python-dotenv
+nodejs
