@@ -1,5 +1,5 @@
 FROM python:3.9
-FROM nikolaik/python-nodejs:latest
+FROM nikolaik/python-nodejs:python3.10-nodejs17
 
 RUN apt update && apt upgrade -y
 RUN apt install python3-pip -y
