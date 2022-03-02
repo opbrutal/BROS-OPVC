@@ -85,12 +85,13 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-#@Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client.on_message(filters.command("play", HNDLR) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
-    if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
-        replied = m.reply_to_message
-        chat_id = m.chat.id
+    if m.sender_id in SUDO_USERS:
+        if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
+            replied = m.reply_to_message
+            chat_id = m.chat.id
+            sender_id = m.sender_id
     if replied:
         if replied.audio or replied.voice:
             await m.delete()
