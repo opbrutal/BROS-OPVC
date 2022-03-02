@@ -20,7 +20,7 @@ from youtubesearchpython import VideosSearch
 
 from utils import CHAT_TITLE, gen_thumb
 from ArrayCore.vc.queues import QUEUE, add_to_queue, get_queue
-
+from pytgcalls import GroupCall
 
 # music player
 def ytsearch(query):
