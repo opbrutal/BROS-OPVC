@@ -85,7 +85,8 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+## OK DIK !! @Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@client.on_message(filters.command("play", HNDLR) & filters.user(SUDO_USERS))
 async def play(client, m: Message):
     if sender_id in SUDO_USERS:
         if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
