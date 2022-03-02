@@ -15,7 +15,7 @@ from pytgcalls.types.input_stream.quality import (
     MediumQualityVideo,
 )
 from youtubesearchpython import VideosSearch
-
+sender_id = sender.id
 from utils import CHAT_TITLE, gen_thumb
 from ArrayCore.vc.queues import QUEUE, add_to_queue, get_queue
 
@@ -87,11 +87,10 @@ async def ytdl(link):
 
 @Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
-    sender_id = m.sender.id
-        if m.sender_id in SUDO_USERS
-            if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
-                replied = m.reply_to_message
-                chat_id = m.chat.id
+    if m.sender_id in SUDO_USERS
+        if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
+            replied = m.reply_to_message
+            chat_id = m.chat.id
     if replied:
         if replied.audio or replied.voice:
             await m.delete()
