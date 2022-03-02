@@ -36,6 +36,7 @@ def ytsearch(query):
         print(e)
         return 0
 
+mp = MusicPlayer()
 
 async def ytdl(link):
     proc = await asyncio.create_subprocess_exec(
