@@ -7,7 +7,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 import pytgcalls
 from search.DefinedSudoCmd import sudo_cmd 
-from funds import is_support_plus
+from funcs import is_support_plus
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import (
