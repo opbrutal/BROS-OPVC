@@ -14,7 +14,6 @@ API_ID = int(os.getenv("API_ID", ""))
 API_HASH = os.getenv("API_HASH", "")
 SESSION = os.getenv("SESSION")
 HNDLR = os.getenv("HNDLR", "!")
-GROUP_MODE = os.getenv("GROUP_MODE", "1789859817")
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "")))
 SUDO_HNDLR = os.environ.get("SUDO_HNDLR", r"!")
 UB_BLACK_LIST_CHAT = set(int(x) for x in os.environ.get("UB_BLACK_LIST_CHAT", ""))
@@ -25,11 +24,5 @@ contact_filter = filters.create(
     (message.from_user and message.from_user.is_contact) or message.outgoing
 )
 
-if GROUP_MODE == ("False" or "false"):
-    grp = True
-else:
-    grp = False
-
-GRPPLAY = grp
 bot = Client(SESSION, API_ID, API_HASH, plugins=dict(root="ArrayCore"))
 call_py = PyTgCalls(bot)
