@@ -6,6 +6,7 @@ from config import bot, call_py, HNDLR, contact_filter, GRPPLAY, SUDO_USERS
 from pyrogram import filters
 from pyrogram.types import Message
 import pytgcalls
+from search.DefinedSudoCmd import sudo_cmd 
 
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
@@ -86,7 +87,8 @@ async def ytdl(link):
     else:
         return 0, stderr.decode()
 
-@Client.on_message(filters.command("play", HNDLR) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client.on_message(sudo_cmd(outgoing=True, pattern="play", allow_sudo=True))
 async def play(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
     replied = m.reply_to_message
