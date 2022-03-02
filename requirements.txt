@@ -18,4 +18,4 @@ python-arq
 youtube-search-python==1.4.6
 python-dotenv
 nodejs
-telegram==3.5.3
+telegram==3.5.0
