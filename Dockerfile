@@ -1,12 +1,13 @@
 FROM python:3.9
-FROM nikolaik/python-nodejs:python3.10-nodejs17
 
 RUN apt update && apt upgrade -y
 RUN apt install python3-pip -y
 RUN apt install ffmpeg -y
-RUN apt-get -y install curl gnupg 
 
-RUN npm start
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install -y nodejs
+RUN npm i -g npm
+
 RUN mkdir /app/
 COPY . /app
 WORKDIR /app
