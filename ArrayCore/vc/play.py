@@ -86,7 +86,7 @@ async def ytdl(link):
 
 
 @Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
-async def play(client, message, m: Message):
+async def play(client, m, message: Message):
     if message.from_user.id not in SUDO_USERS: 
         return 
     else:
