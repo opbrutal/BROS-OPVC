@@ -30,6 +30,7 @@ async def _human_time_duration(seconds):
 
 
 @Client.on_message(filters.command(["ping"], prefixes=f"{HNDLR}"))
+@Client.on_message(sudo_cmd(outgoing=True, pattern="ping", allow_sudo=True))
 async def ping(client, m: Message):
    start = time()
    current_time = datetime.utcnow()
@@ -47,6 +48,7 @@ async def restart(client, m: Message):
    # You probably don't need it but whatever
    quit()
 
+@Client.on_message(filters.command(["help"], prefixes=f"{HNDLR}"))
 @Client.on_message(sudo_cmd(outgoing=True, pattern="help", allow_sudo=True))
 async def help(client, m: Message):
    HELP = f"""
