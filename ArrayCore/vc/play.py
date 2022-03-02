@@ -7,7 +7,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 import pytgcalls
 from search.DefinedSudoCmd import sudo_cmd 
-from funcs import is_support_plus
+
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import (
@@ -20,7 +20,7 @@ from youtubesearchpython import VideosSearch
 
 from utils import CHAT_TITLE, gen_thumb
 from ArrayCore.vc.queues import QUEUE, add_to_queue, get_queue
-from pytgcalls import GroupCall
+
 
 # music player
 def ytsearch(query):
@@ -35,37 +35,6 @@ def ytsearch(query):
     except Exception as e:
         print(e)
         return 0
-
-class MusicPlayer(object):
-    def __init__(self):
-        self.group_call = GroupCall(None, path_to_log_file='')
-        self.chat_id = None
-        self.start_time = None
-
-    async def update_start_time(self, reset=False):
-        self.start_time = (
-            None if reset
-            else datetime.utcnow().replace(microsecond=0)
-        )
-
-    async def pin_current_audio(self):
-        group_call = self.group_call
-        client = group_call.client
-        chat_id = int("-100" + str(group_call.full_chat.id))
-        try:
-            async for m in client.search_messages(chat_id,
-                                                  filter="pinned",
-                                                  limit=1):
-                if m.audio:
-                    await m.unpin()
-            await playlist[0].pin(True)
-        except ChatAdminRequired:
-            pass
-        except FloodWait:
-            pass
-
-
-mp = MusicPlayer()
 
 
 async def ytdl(link):
@@ -118,39 +87,87 @@ async def ytdl(link):
     else:
         return 0, stderr.decode()
 
-
 @Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
-async def play_track(client, m: Message):
-    group_call = mp.group_call
-    # show playlist
-    if not m.reply_to_message or not m.reply_to_message.audio:
-        await send_playlist()
-        return
-    # check already added
-    m_reply = m.reply_to_message
-    if playlist and playlist[-1].audio.file_unique_id \
-            == m_reply.audio.file_unique_id:
-        await m.reply_text(f"{emoji.ROBOT} already added")
-        return
-    # add to playlist
-    playlist.append(m_reply)
-    if len(playlist) == 1:
-        m_status = await m.reply_text(
-            f"{emoji.INBOX_TRAY} downloading and transcoding..."
-        )
-        await download_audio(playlist[0])
-        group_call.input_filename = os.path.join(
-            client.workdir,
-            DEFAULT_DOWNLOAD_DIR,
-            f"{playlist[0].audio.file_unique_id}.raw"
-        )
-        await mp.update_start_time()
-        await m_status.delete()
-        print(f"- START PLAYING: {playlist[0].audio.title}")
-        await mp.pin_current_audio()
-    await send_playlist()
-    for track in playlist[:2]:
-        await download_audio(track)
+async def play(client, m: Message):
+ if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
+    replied = m.reply_to_message
+    chat_id = m.chat.id
+    if replied:
+        if replied.audio or replied.voice:
+            await m.delete()
+            TheVenomXD = await replied.reply("**Reading Mp3.**")
+            dl = await replied.download()
+            link = replied.link
+            if replied.audio:
+                if replied.audio.title:
+                    songname = replied.audio.title[:35] + "..."
+                else:
+                    songname = replied.audio.file_name[:35] + "..."
+            elif replied.voice:
+                songname = "Voice Note"
+            if chat_id in QUEUE:
+                pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
+                await TheVenomXD.delete()
+                caption="**Playing In {chat_id}**",
+                
+            else:
+                await call_py.join_group_call(
+                    chat_id,
+                    AudioPiped(
+                        dl,
+                    ),
+                    stream_type=StreamType().pulse_stream,
+                )
+                add_to_queue(chat_id, songname, dl, link, "Audio", 0)
+                await TheVenomXD.delete()
+                caption="**Playing In {chat_id}**",
+                
+
+    else:
+        if len(m.command) < 2:
+            await m.reply("Reply to Audio File or provide something for Searching ...")
+        else:
+            await m.delete()
+            TheVenomXD = await m.reply(" Searching...")
+            query = m.text.split(None, 1)[1]
+            search = ytsearch(query)
+            if search == 0:
+                await TheVenomXD.edit("`Didn't Find Anything for the Given Query`")
+            else:
+                songname = search[0]
+                title = search[0]
+                url = search[1]
+                duration = search[2]
+                thumbnail = search[3]
+                userid = m.from_user.id
+                srrf = m.chat.title
+                ctitle = await CHAT_TITLE(srrf)
+                thumb = await gen_thumb(thumbnail, title, userid, ctitle)
+                hm, ytlink = await ytdl(url)
+                if hm == 0:
+                    await TheVenomXD.edit(f"**YTDL ERROR ️** \n\n`{ytlink}`")
+                else:
+                    if chat_id in QUEUE:
+                        pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
+                        await TheVenomXD.delete()
+                        caption=f"""**Playing In {chat_id}**""",
+                        
+                    else:
+                        try:
+                            await call_py.join_group_call(
+                                chat_id,
+                                AudioPiped(
+                                    ytlink,
+                                ),
+                                stream_type=StreamType().pulse_stream,
+                            )
+                            add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
+                            await TheVenomXD.delete()
+                            caption=f"""**Playing In {chat_id}**""",
+                            
+                        except Exception as ep:
+                            await TheVenomXD.edit(f"`{ep}`")
+
 
 @Client.on_message(filters.command(["vplay"], prefixes=f"{HNDLR}"))
 async def vplay(client, m: Message):
