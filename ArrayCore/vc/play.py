@@ -85,13 +85,12 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
-#@client.on_message(filters.command("play", HNDLR) & filters.user(SUDO_USERS))
+#@Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command("play", HNDLR) & filters.user(SUDO_USERS))
 async def play(client, m: Message):
-    if m.sender_id in SUDO_USERS:
-        if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
-            replied = m.reply_to_message
-            chat_id = m.chat.id
+    if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
+        replied = m.reply_to_message
+        chat_id = m.chat.id
     if replied:
         if replied.audio or replied.voice:
             await m.delete()
@@ -104,6 +103,7 @@ async def play(client, m: Message):
                 else:
                     songname = replied.audio.file_name[:35] + "..."
             elif replied.voice:
+                
                 songname = "Voice Note"
             if chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
