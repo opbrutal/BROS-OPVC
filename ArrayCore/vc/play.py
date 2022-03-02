@@ -2,7 +2,7 @@ import os
 import re
 import asyncio
 from pyrogram import Client
-from config import bot, call_py, HNDLR, contact_filter, GRPPLAY, SUDO_USERS 
+from config import bot, call_py, HNDLR, contact_filter, SUDO_USERS 
 from pyrogram import filters
 from pyrogram.types import Message
 import pytgcalls
@@ -89,7 +89,7 @@ async def ytdl(link):
 
 @Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
- if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
+ if 1789859817 or (m.from_user and m.from_user.is_contact) or m.outgoing:
     replied = m.reply_to_message
     chat_id = m.chat.id
     if replied:
@@ -171,7 +171,7 @@ async def play(client, m: Message):
 
 @Client.on_message(filters.command(["vplay"], prefixes=f"{HNDLR}"))
 async def vplay(client, m: Message):
- if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
+ if 1789859817 or (m.from_user and m.from_user.is_contact) or m.outgoing:
     replied = m.reply_to_message
     chat_id = m.chat.id
     m.chat.title
@@ -269,7 +269,7 @@ async def vplay(client, m: Message):
 
 @Client.on_message(filters.command(["playlist"], prefixes=f"{HNDLR}"))
 async def playlist(client, m: Message):
- if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
+ if 1789859817 or (m.from_user and m.from_user.is_contact) or m.outgoing:
     chat_id = m.chat.id
     if chat_id in QUEUE:
         chat_queue = get_queue(chat_id)
