@@ -5,7 +5,7 @@ from pyrogram import Client
 from config import bot, call_py, HNDLR, contact_filter, GRPPLAY
 from pyrogram import filters
 from pyrogram.types import Message
-
+from config import SUDO_USERS 
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import (
@@ -87,7 +87,7 @@ async def ytdl(link):
 
 @Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
- if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
+ if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing or SUDO_USERS:
     replied = m.reply_to_message
     chat_id = m.chat.id
     if replied:
