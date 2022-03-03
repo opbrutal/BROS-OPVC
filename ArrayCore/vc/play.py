@@ -121,34 +121,34 @@ async def play(client, m: Message):
         caption="**Playing In {chat_id}**",
                 
 
+else:
+    if len(m.command) < 2:
+        await m.reply("Reply to Audio File or provide something for Searching ...")
     else:
-        if len(m.command) < 2:
-            await m.reply("Reply to Audio File or provide something for Searching ...")
+        await m.delete()
+        TheVenomXD = await m.reply(" Searching...")
+        query = m.text.split(None, 1)[1]
+        search = ytsearch(query)
+        if search == 0:
+            await TheVenomXD.edit("`Didn't Find Anything for the Given Query`")
         else:
-            await m.delete()
-            TheVenomXD = await m.reply(" Searching...")
-            query = m.text.split(None, 1)[1]
-            search = ytsearch(query)
-            if search == 0:
-                await TheVenomXD.edit("`Didn't Find Anything for the Given Query`")
+            songname = search[0]
+            title = search[0]
+            url = search[1]
+            duration = search[2]
+            thumbnail = search[3]
+            userid = m.from_user.id
+            srrf = m.chat.title
+            ctitle = await CHAT_TITLE(srrf)
+            thumb = await gen_thumb(thumbnail, title, userid, ctitle)
+            hm, ytlink = await ytdl(url)
+            if hm == 0:
+                await TheVenomXD.edit(f"**YTDL ERROR ️** \n\n`{ytlink}`")
             else:
-                songname = search[0]
-                title = search[0]
-                url = search[1]
-                duration = search[2]
-                thumbnail = search[3]
-                userid = m.from_user.id
-                srrf = m.chat.title
-                ctitle = await CHAT_TITLE(srrf)
-                thumb = await gen_thumb(thumbnail, title, userid, ctitle)
-                hm, ytlink = await ytdl(url)
-                if hm == 0:
-                    await TheVenomXD.edit(f"**YTDL ERROR ️** \n\n`{ytlink}`")
-                else:
-                    if chat_id in QUEUE:
-                        pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
-                        await TheVenomXD.delete()
-                        caption=f"""**Playing In {chat_id}**""",
+                if chat_id in QUEUE:
+                    pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
+                    await TheVenomXD.delete()
+                   caption=f"""**Playing In {chat_id}**""",
                         
                     else:
                         try:
