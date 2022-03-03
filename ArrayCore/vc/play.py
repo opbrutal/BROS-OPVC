@@ -96,9 +96,9 @@ async def play(client, m: Message):
         TheVenomXD = await replied.reply("**Reading Mp3.**")
         dl = await replied.download()
         link = replied.link
-            if replied.audio:
-                if replied.audio.title:
-                    songname = replied.audio.title[:35] + "..."
+    if replied.audio:
+        if replied.audio.title:
+            songname = replied.audio.title[:35] + "..."
                 else:
                     songname = replied.audio.file_name[:35] + "..."
             elif replied.voice:
