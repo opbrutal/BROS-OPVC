@@ -91,12 +91,11 @@ async def play(client, m: Message):
         if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
             replied = m.reply_to_message
             chat_id = m.chat.id
-    if replied:
-        if replied.audio or replied.voice:
-            await m.delete()
-            TheVenomXD = await replied.reply("**Reading Mp3.**")
-            dl = await replied.download()
-            link = replied.link
+    if replied.audio or replied.voice:
+        await m.delete()
+        TheVenomXD = await replied.reply("**Reading Mp3.**")
+        dl = await replied.download()
+        link = replied.link
             if replied.audio:
                 if replied.audio.title:
                     songname = replied.audio.title[:35] + "..."
