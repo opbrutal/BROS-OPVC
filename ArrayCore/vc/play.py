@@ -88,7 +88,7 @@ async def ytdl(link):
 @Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
  if GRPPLAY != "True":
-    if message.from_user.id not in SUDO_USERS:
+    if m.from_user.id not in SUDO_USERS:
         return
     replied = m.reply_to_message
     chat_id = m.chat.id
