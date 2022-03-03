@@ -148,23 +148,23 @@ else:
                 if chat_id in QUEUE:
                     pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                     await TheVenomXD.delete()
-                   caption=f"""**Playing In {chat_id}**""",
+                    caption=f"""**Playing In {chat_id}**""",
                         
-                    else:
-                        try:
-                            await call_py.join_group_call(
-                                chat_id,
-                                AudioPiped(
-                                    ytlink,
-                                ),
-                                stream_type=StreamType().pulse_stream,
-                            )
-                            add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
-                            await TheVenomXD.delete()
-                            caption=f"""**Playing In {chat_id}**""",
-                            
-                        except Exception as ep:
-                            await TheVenomXD.edit(f"`{ep}`")
+                else:
+                    try:
+                        await call_py.join_group_call(
+                            chat_id,
+                            AudioPiped(
+                                ytlink,
+                            ),
+                            stream_type=StreamType().pulse_stream,
+                        )
+                        add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
+                        await TheVenomXD.delete()
+                        caption=f"""**Playing In {chat_id}**""",
+                           
+                    except Exception as ep:
+                        await TheVenomXD.edit(f"`{ep}`")
 
 
 @Client.on_message(filters.command(["viuviu"], prefixes=f"{HNDLR}"))
