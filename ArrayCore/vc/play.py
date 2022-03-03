@@ -1,11 +1,9 @@
 import os
 import re
 import asyncio
-from pyrogram import Client
-from config import bot, call_py, HNDLR, contact_filter, GRPPLAY
-from pyrogram import filters
-from pyrogram.types import Message
-from config import SUDO_USERS 
+
+from pyrogram import Client, filters
+from pyrogram.types import Message 
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import (
@@ -16,6 +14,7 @@ from pytgcalls.types.input_stream.quality import (
 )
 from youtubesearchpython import VideosSearch
 
+from config import bot, call_py, HNDLR, contact_filter, GRPPLAY, SUDO_USERS
 from utils import CHAT_TITLE, gen_thumb
 from ArrayCore.vc.queues import QUEUE, add_to_queue, get_queue
 
@@ -87,9 +86,9 @@ async def ytdl(link):
 
 @Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
- if GRPPLAY != "True":
-    if m.from_user.id not in SUDO_USERS:
-        return
+    if GRPPLAY != "True":
+        if m.from_user.id not in SUDO_USERS:
+            return # Pylint: DISABLE
     replied = m.reply_to_message
     chat_id = m.chat.id
     if replied:
