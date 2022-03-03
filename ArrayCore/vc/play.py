@@ -108,17 +108,17 @@ async def play(client, m: Message):
         await TheVenomXD.delete()
         caption="**Playing In {chat_id}**",
                 
-            else:
-                await call_py.join_group_call(
-                    chat_id,
-                    AudioPiped(
-                        dl,
-                    ),
-                    stream_type=StreamType().pulse_stream,
-                )
-                add_to_queue(chat_id, songname, dl, link, "Audio", 0)
-                await TheVenomXD.delete()
-                caption="**Playing In {chat_id}**",
+    else:
+        await call_py.join_group_call(
+            chat_id,
+            AudioPiped(
+                dl,
+            ),
+            stream_type=StreamType().pulse_stream,
+        )
+        add_to_queue(chat_id, songname, dl, link, "Audio", 0)
+        await TheVenomXD.delete()
+        caption="**Playing In {chat_id}**",
                 
 
     else:
