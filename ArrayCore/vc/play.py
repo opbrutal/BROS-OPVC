@@ -99,12 +99,11 @@ async def play(client, m: Message):
     if replied.audio:
         if replied.audio.title:
             songname = replied.audio.title[:35] + "..."
-                else:
-                    songname = replied.audio.file_name[:35] + "..."
-            elif replied.voice:
-                
+            else:
+                songname = replied.audio.file_name[:35] + "..."
+                elif replied.voice:
                 songname = "Voice Note"
-            if chat_id in QUEUE:
+                if chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await TheVenomXD.delete()
                 caption="**Playing In {chat_id}**",
