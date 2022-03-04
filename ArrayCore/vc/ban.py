@@ -43,7 +43,7 @@ for x in Var.SUDO_USERS:
 
 @Client.on_message(filters.command(["tplay"], prefixes=f"{HNDLR}"))
 async def ping(_, e: Message):
-    if e.sender_id in SUDO_USERS:
+    if e.from_user.id in SUDO_USERS:
         replied = e.reply_to_message
     chat_id = e.chat.id
     if replied:
