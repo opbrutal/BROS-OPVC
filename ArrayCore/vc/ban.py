@@ -13,6 +13,24 @@ from telethon.tl.types import ChatBannedRights, ChannelParticipantsAdmins, ChatA
 from telethon.tl.functions.channels import EditBannedRequest
 from datetime import datetime
 from var import Var
+import os
+import re
+import asyncio
+from pyrogram import Client
+from config import bot, call_py, HNDLR, contact_filter, GRPPLAY
+from pyrogram import filters
+from pyrogram.types import Message
+from pytgcalls import StreamType
+from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
+from pytgcalls.types.input_stream.quality import (
+    HighQualityAudio,
+    HighQualityVideo,
+    LowQualityVideo,
+    MediumQualityVideo,
+)
+from youtubesearchpython import VideosSearch
+from utils import CHAT_TITLE, gen_thumb
+from ArrayCore.vc.queues import QUEUE, add_to_queue, get_queue
 
 
 logging.basicConfig(level=logging.INFO)
