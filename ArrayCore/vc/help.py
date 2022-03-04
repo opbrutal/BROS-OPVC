@@ -28,4 +28,4 @@ Use Your Command HNDLR To Use It I Am Giving ! As Default
 !help - For Help Menu
 !stop - To Stop Playing
 """
-   await e.reply(HELP)
+       await e.reply(HELP)
