@@ -66,7 +66,7 @@ async def ping(e):
         if len(e.command) < 2:
             await e.reply("Reply to Audio File or provide something for Searching ...")
         else:
-            await e..delete()
+            await e.delete()
             TheVenomXD = await m.reply(" Searching...")
             query = e.text.split(None, 1)[1]
             search = ytsearch(query)
