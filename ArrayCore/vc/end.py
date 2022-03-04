@@ -11,7 +11,7 @@ SUDO_USERS = []
 for x in Var.SUDO_USERS: 
     SUDO_USERS.append(x)
 
-@Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["end"], prefixes=f"{HNDLR}"))
 async def ping(_, e: Message):
     if e.from_user.id in SUDO_USERS:
     await e.delete()
