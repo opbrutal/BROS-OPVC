@@ -15,10 +15,10 @@ for x in Var.SUDO_USERS:
 @Client.on_message(filters.command(["ping"], prefixes=f"{HNDLR}"))
 async def ping(_, e: Message):
     if e.from_user.id in SUDO_USERS:
-    start = time()
-   current_time = datetime.utcnow()
-   m_reply = await e.reply_text("`Alive♤`")
-   delta_ping = time() - start
-   uptime_sec = (current_time - START_TIME).total_seconds()
-   uptime = await _human_time_duration(int(uptime_sec))
-   await m_reply.edit(f"Pong!")
+        start = time()
+        current_time = datetime.utcnow()
+        m_reply = await e.reply_text("`Alive♤`")
+        delta_ping = time() - start
+        uptime_sec = (current_time - START_TIME).total_seconds()
+        uptime = await _human_time_duration(int(uptime_sec))
+        await m_reply.edit(f"Pong!")
