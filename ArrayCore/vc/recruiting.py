@@ -16,7 +16,7 @@ for x in Var.SUDO_USERS:
 @Client.on_message(filters.command(["restart"], prefixes=f"{HNDLR}"))
 async def ping(_, e: Message):
     if e.from_user.id in SUDO_USERS:
-       await m.reply("`Restarting...`")
+       await e.reply("`Restarting...`")
        os.execl(sys.executable, sys.executable, *sys.argv)
    # You probably don't need it but whatever
        quit()
