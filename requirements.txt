@@ -2,6 +2,7 @@ TgCrypto
 git+https://github.com/pyrogram/pyrogram@master
 py-tgcalls==0.8.2
 telegraph
+telethon 
 gTTS
 googletrans==4.0.0rc1
 yt_dlp
