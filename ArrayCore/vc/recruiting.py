@@ -17,6 +17,6 @@ for x in Var.SUDO_USERS:
 async def ping(_, e: Message):
     if e.from_user.id in SUDO_USERS:
        await m.reply("`Restarting...`")
-   os.execl(sys.executable, sys.executable, *sys.argv)
+       os.execl(sys.executable, sys.executable, *sys.argv)
    # You probably don't need it but whatever
-   quit()
+       quit()
