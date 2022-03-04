@@ -16,7 +16,7 @@ for x in Var.SUDO_USERS:
 @Client.on_message(filters.command(["help"], prefixes=f"{HNDLR}"))
 async def ping(_, e: Message):
     if e.from_user.id in SUDO_USERS:
-    HELP = f"""
+        HELP = f"""
 Help Menu For VcRaid By [Akash](https/t.me/TheVenomXD).
 Use Your Command HNDLR To Use It I Am Giving ! As Default
 
