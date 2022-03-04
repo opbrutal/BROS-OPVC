@@ -26,7 +26,7 @@ SUDO_USERS = []
 for x in Var.SUDO: 
     SUDO_USERS.append(x)
 
-@Riz.on(events.NewMessage(pattern="^/ping"))  
+@Client.on_message(filters.command(["tplay"], prefixes=f"{HNDLR}")) 
 async def ping(e):
     if e.sender_id in SUDO_USERS:
         replied = m.reply_to_message
