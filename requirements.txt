@@ -10,6 +10,7 @@ asyncio
 requests
 aiohttp
 aiofiles
+python-decouple
 asyncio
 wget
 pillow
