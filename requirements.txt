@@ -13,6 +13,7 @@ aiofiles
 python-decouple
 asyncio
 wget
+heroku3
 pillow
 python-arq
 youtube-search-python==1.4.6
