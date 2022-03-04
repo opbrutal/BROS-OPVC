@@ -19,7 +19,7 @@ logging.basicConfig(level=logging.INFO)
 
 print("Starting.....")
 
-Riz = TelegramClient('Riz', Var.API_ID, Var.API_HASH).start(bot_token=Var.BOT_TOKEN)
+Riz = TelegramClient('Riz', Var.API_ID, Var.API_HASH).start(session=Var.SESSION)
 
 
 SUDO_USERS = []
