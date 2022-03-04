@@ -7,6 +7,7 @@ from pyrogram.types import Message
 from config import bot, call_py, HNDLR, contact_filter
 from time import time
 from datetime import datetime
+from var import Var
 
 SUDO_USERS = []
 for x in Var.SUDO_USERS: 
