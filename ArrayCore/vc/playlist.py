@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from config import bot, call_py, HNDLR, contact_filter
 from ArrayCore.vc.handlers import skip_current_song, skip_item
 from ArrayCore.vc.queues import QUEUE, clear_queue
-
+from var import Var
 
 SUDO_USERS = []
 for x in Var.SUDO_USERS: 
@@ -13,12 +13,12 @@ for x in Var.SUDO_USERS:
 @Client.on_message(filters.command(["playlist"], prefixes=f"{HNDLR}"))
 async def ping(_, e: Message):
     if e.from_user.id in SUDO_USERS:
-    chat_id = e.chat.id
+       chat_id = m.chat.id
     if chat_id in QUEUE:
         chat_queue = get_queue(chat_id)
         if len(chat_queue) == 1:
-            await e.delete()
-            await e.reply(
+            await m.delete()
+            await m.reply(
                 f"**Playing In {chat_id}**",
                 disable_web_page_preview=True,
             )
@@ -30,6 +30,8 @@ async def ping(_, e: Message):
                 hmmm = chat_queue[x][2]
                 hmmmm = chat_queue[x][3]
                 QUE = QUE + "\n" + f"**#{x}** - [{hmm}]({hmmm}) | `{hmmmm}`\n"
-            await e.reply(QUE, disable_web_page_preview=True)
+            await m.reply(QUE, disable_web_page_preview=True)
     else:
-        await e.reply("__Doesn't play anything__")
+        await m.reply("__Doesn't play anything__")
+
+       
