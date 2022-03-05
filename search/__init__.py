@@ -36,21 +36,21 @@ SESSION14 = config("SESSION14", default=None)
 SESSION15 = config("SESSION15", default=None)
 
 
-Client = ""
-Client2 = ""
-Client3 = ""
-Client4 = ""
-Client5 = ""
-Client6 = ""
-Client7 = ""
-Client8 = ""
-Client9 = ""
-Client10 = ""
-Client11 = ""
-Client12 = ""
-Client13 = ""
-Client14 = ""
-Client15 = ""
+Client = None
+Client2 = None
+Client3 = None
+Client4 = None
+Client5 = None
+Client6 = None
+Client7 = None
+Client8 = None
+Client9 = None
+Client10 = None
+Client11 = None
+Client12 = None
+Client13 = None
+Client14 = None
+Client15 = None
 
 que = {}
 
