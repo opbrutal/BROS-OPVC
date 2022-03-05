@@ -57,7 +57,7 @@ async def TheVenomXD():
     if SESSION:
         session_name = str(SESSION)
         print("SESSION 1 Found")
-        Client = TelegramClient(SESSIONSession(session_name), API_ID, API_HASH)
+        Client = TelegramClient(StringSession(session_name), API_ID, API_HASH)
         try:
             print("Starting With Your Session1")
             await Client.start()
