@@ -8,8 +8,7 @@ from config import bot, call_py, HNDLR, contact_filter
 from time import time
 from datetime import datetime
 from var import Var
-from search import Client, Client2, Client3, Client4, Client5, Client6, Client7, Client8, Client9, Client10, Client11, Client12, Client13, Client14, Client15,
-
+from search import Client, Client2, Client3, Client4, Client5, Client6, Client7, Client8, Client9, Client10, Client11, Client12, Client13, Client14, Client15
 
 SUDO_USERS = []
 for x in Var.SUDO_USERS: 
