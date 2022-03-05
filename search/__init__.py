@@ -36,7 +36,7 @@ SESSION13 = config("SESSION13", default=None)
 SESSION14 = config("SESSION14", default=None)
 SESSION15 = config("SESSION15", default=None)
 
-async def ArrayCore():
+async def TheVenomXD():
     global Client
     global Client2
     global Client3
@@ -453,4 +453,4 @@ async def ArrayCore():
 
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(ArrayCore())
+loop.run_until_complete(TheVenomXD())
