@@ -36,7 +36,7 @@ SESSION13 = config("SESSION13", default=None)
 SESSION14 = config("SESSION14", default=None)
 SESSION15 = config("SESSION15", default=None)
 
-async def VcRaid():
+async def ArrayCore():
     global Client
     global Client2
     global Client3
