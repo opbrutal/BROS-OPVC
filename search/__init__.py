@@ -1,4 +1,3 @@
-
 import os
 import sys
 import random
@@ -470,6 +469,6 @@ async def ArrayCore():
         except Exception as e:
             pass
 
-
 loop = asyncio.get_event_loop()
-loop.run_until_complete(ArrayCore())
+if __name__ == "__main__":
+    loop.run_until_complete(ArrayCore())
