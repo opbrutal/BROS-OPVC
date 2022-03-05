@@ -469,6 +469,3 @@ async def ArrayCore():
         except Exception as e:
             pass
 
-loop = asyncio.get_event_loop()
-if __name__ == "__main__":
-    loop.run_until_complete(ArrayCore())
