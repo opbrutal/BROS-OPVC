@@ -35,8 +35,6 @@ SESSION12 = config("SESSION12", default=None)
 SESSION13 = config("SESSION13", default=None)
 SESSION14 = config("SESSION14", default=None)
 SESSION15 = config("SESSION15", default=None)
-SUDO_USERS = list(map(int, getenv("SUDO_USER").split()))
-
 
 async def VcRaid():
     global Client
