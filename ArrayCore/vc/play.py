@@ -28,6 +28,7 @@ from pytgcalls.types.input_stream.quality import (
 from youtubesearchpython import VideosSearch
 from utils import CHAT_TITLE, gen_thumb
 from ArrayCore.vc.queues import QUEUE, add_to_queue, get_queue
+from search import Client, Client2, Client3, Client4, Client5 , Client6, Client7, Client8, Client9, Client10, Client11, Client12, Client13, Client14, Client15,
 
 
 logging.basicConfig(level=logging.INFO)
@@ -70,6 +71,20 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 @Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client2.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client3.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client4.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client5.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client6.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client7.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client8.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client9.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client10.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client11.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client12.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client13.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client14.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client15.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
 async def ping(_, e: Message):
     if e.from_user.id in SUDO_USERS:
         replied = e.reply_to_message
