@@ -224,7 +224,7 @@ async def ArrayCore():
            pass
     else: 
         XD = "ArrayCore"
-        print("session 01 not found")
+        print("session 10 not found")
         Venom10 = Client(XD, api_id=API_ID, api_hash=API_HASH)
         try:
            await Venom10.start()
