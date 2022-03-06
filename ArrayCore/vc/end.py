@@ -1,32 +1,32 @@
-from pyrogram import Client 
+from pyrogram import Client as Venom
 import os
 from pyrogram import filters
 from pyrogram.types import Message
 from config import bot, call_py, HNDLR, contact_filter
 from ArrayCore.vc.handlers import skip_current_song, skip_item
 from ArrayCore.vc.queues import QUEUE, clear_queue
-from var import Var 
-from search import Client, Client2, Client3, Client4, Client5, Client6, Client7, Client8, Client9, Client10, Client11, Client12, Client13, Client14, Client15
+from var import Var
+from search import Venom2, Venom3, Venom5, Venom4, Venom6, Venom7, Venom8, Venom9, Venom10, Venom11, Venom12, Venom13, Venom14, Venom15
 
 SUDO_USERS = []
 for x in Var.SUDO_USERS: 
     SUDO_USERS.append(x)
 
-@Client.on(filters.command(["end"], prefixes=f"{HNDLR}"))
-@Client2.on(filters.command(["end"], prefixes=f"{HNDLR}"))
-@Client3.on(filters.command(["end"], prefixes=f"{HNDLR}"))
-@Client4.on(filters.command(["end"], prefixes=f"{HNDLR}"))
-@Client5.on(filters.command(["end"], prefixes=f"{HNDLR}"))
-@Client6.on(filters.command(["end"], prefixes=f"{HNDLR}"))
-@Client7.on(filters.command(["end"], prefixes=f"{HNDLR}"))
-@Client8.on(filters.command(["end"], prefixes=f"{HNDLR}"))
-@Client9.on(filters.command(["end"], prefixes=f"{HNDLR}"))
-@Client10.on(filters.command(["end"], prefixes=f"{HNDLR}"))
-@Client11.on(filters.command(["end"], prefixes=f"{HNDLR}"))
-@Client12.on(filters.command(["end"], prefixes=f"{HNDLR}"))
-@Client13.on(filters.command(["end"], prefixes=f"{HNDLR}"))
-@Client14.on(filters.command(["end"], prefixes=f"{HNDLR}"))
-@Client15.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom2.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom3.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom4.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom5.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom6.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom7.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom8.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom9.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom10.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom11.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom12.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom13.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom14.on(filters.command(["end"], prefixes=f"{HNDLR}"))
+@Venom15.on(filters.command(["end"], prefixes=f"{HNDLR}"))
 async def ping(_, e: Message):
     if e.from_user.id in SUDO_USERS:
         await e.delete()
