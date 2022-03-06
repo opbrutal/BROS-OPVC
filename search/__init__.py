@@ -320,6 +320,4 @@ async def ArrayCore():
            await Venom15.start()
         except Exception as e:
            pass
-    
-loop = asyncio.get_event_loop()
-loop.run_until_complete(ArrayCore())    
+   
