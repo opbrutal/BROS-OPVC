@@ -51,6 +51,20 @@ GRPPLAY = grp
 bot = Client(SESSION, API_ID, API_HASH, plugins=dict(root="ArrayCore.vc"))
 call_py = PyTgCalls(bot)
 
+Venom2 = ""
+Venom3 = ""
+Venom5 = ""
+Venom4 = ""
+Venom6 = ""
+Venom7 = "" 
+Venom8 = ""
+Venom9 = ""
+Venom10 = "" 
+Venom11 = ""
+Venom12 = ""
+Venom13 = ""
+Venom14 = ""
+Venom15 = ""
 
 # sessions
 async def ArrayCore():
