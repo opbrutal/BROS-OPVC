@@ -33,9 +33,16 @@ SESSION15 = os.getenv("SESSION15", None)
 HNDLR = os.getenv("HNDLR", "!")
 GROUP_MODE = os.getenv("GROUP_MODE", "True")
 SUDO_USERS = list(filter(lambda x: x, map(int, os.getenv("SUDO_USERS", "1517994352 1789859817 1432756163").split())))
-#-----------------------------------------
+#----------------------------------------------
 
-vcbot = Client("bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH, (ArrayCore"))
+vcbot = Client(
+    'ArrayCore',
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=BOT_TOKEN,
+    plugins={'root': 'ArrayCore.vc'},
+)
+
 contact_filter = filters.create(lambda _, __, message:(message.from_user and message.from_user.is_contact) or message.outgoing)
 start_time = time.time()
 
@@ -47,7 +54,7 @@ else:
 
 #-------------------------CLIENTS-----------------------------
 if SESSION1:
-    Venom1 = Client(SESSION1, api_id=API_ID, api_hash=API_HASH, plugins=dict(root="ArrayCore.vc"))
+    Venom1 = Client(SESSION1, api_id=API_ID, api_hash=API_HASH)
     call_py = PyTgCalls(Venom1)
 
 if SESSION2:
