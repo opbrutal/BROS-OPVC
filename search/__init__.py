@@ -1,6 +1,7 @@
 import asyncio
 import os
 import sys
+import time
 
 from dotenv import load_dotenv
 from pyrogram import Client, filters
@@ -36,6 +37,7 @@ SUDO_USERS = list(filter(lambda x: x, map(int, os.getenv("SUDO_USERS", "15179943
 
 vcbot = Client("ArrayCore", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
 contact_filter = filters.create(lambda _, __, message:(message.from_user and message.from_user.is_contact) or message.outgoing)
+start_time = time.time()
 
 if GROUP_MODE == ("True" or "true" or "TRUE"):
     grp = True
