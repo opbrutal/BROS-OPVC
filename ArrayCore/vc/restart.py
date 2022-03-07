@@ -11,7 +11,7 @@ from search import (Venom1, Venom2, Venom3, Venom4,
                     HNDLR, call_py, contact_filter, SUDO_USERS)
     
 
-@vcbot.on_message(filters.user(SUDO_USERS) & filters.private & filters.command(["restart"], prefixes=HNDLR))
+@vcbot.on_message(filters.user(SUDO_USERS) & filters.command(["restart"], prefixes=HNDLR))
 async def ping(_, e: Message):
     await e.reply_text("`Restarting...`")
     os.execl(sys.executable, sys.executable, *sys.argv)
