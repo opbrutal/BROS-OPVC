@@ -1,15 +1,16 @@
-import os
 import asyncio
+import os
 import sys
+
 from dotenv import load_dotenv
 from pyrogram import Client, filters
 from pytgcalls import PyTgCalls
-from os import getenv
+
 
 if os.path.exists(".env"):
     load_dotenv(".env")
     
-
+# -------------CONFIGS--------------------
 API_ID = int(os.getenv("API_ID", ""))
 API_HASH = os.getenv("API_HASH", "")
 BOT_TOKEN = os.getenv("BOT_TOKEN", None)
@@ -28,20 +29,21 @@ SESSION12 = os.getenv("SESSION12", None)
 SESSION13 = os.getenv("SESSION13", None)
 SESSION14 = os.getenv("SESSION14", None)
 SESSION15 = os.getenv("SESSION15", None)
-
 HNDLR = os.getenv("HNDLR", "!")
 GROUP_MODE = os.getenv("GROUP_MODE", "True")
-SUDO_USERS = list(filter(lambda x: x, map(int, getenv("SUDO_USERS", "1517994352 1789859817 1432756163").split())))
-vcbot = Client("ArrayCore", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
+SUDO_USERS = list(filter(lambda x: x, map(int, os.getenv("SUDO_USERS", "1517994352 1789859817 1432756163").split())))
+#-----------------------------------------
+
+# vcbot = Client("ArrayCore", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
 contact_filter = filters.create(lambda _, __, message:(message.from_user and message.from_user.is_contact) or message.outgoing)
 
-
-if GROUP_MODE == ("True" or "true"):
+if GROUP_MODE == ("True" or "true" or "TRUE"):
     grp = True
 else:
     grp = False
 
 
+#-------------------------CLIENTS-----------------------------
 if SESSION1:
     Venom1 = Client(SESSION1, api_id=API_ID, api_hash=API_HASH, plugins=dict(root="ArrayCore.vc"))
     call_py = PyTgCalls(Venom1)
@@ -115,4 +117,4 @@ if SESSION15:
     Venom15 = Client(SESSION15, api_id=API_ID, api_hash=API_HASH)
 else:
     Venom15 = None
-
+#----------------------------------------------------------------
