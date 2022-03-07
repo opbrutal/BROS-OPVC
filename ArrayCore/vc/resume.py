@@ -11,7 +11,7 @@ SUDO_USERS = []
 for x in Var.SUDO_USERS: 
     SUDO_USERS.append(x)
 
-@vcbot.on_message(filters.user(SUDO_USERS) & filters.private & filters.command(["pause"], prefixes=HNDLR))
+@vcbot.on_message(filters.user(SUDO_USERS) & filters.private & filters.command(["resume"], prefixes=HNDLR))
 async def ping(_, e: Message):
     if e.from_user.id in SUDO_USERS:
         await e.delete()
