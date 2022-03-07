@@ -35,7 +35,7 @@ GROUP_MODE = os.getenv("GROUP_MODE", "True")
 SUDO_USERS = list(filter(lambda x: x, map(int, os.getenv("SUDO_USERS", "1517994352 1789859817 1432756163").split())))
 #-----------------------------------------
 
-vcbot = Client("bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH, plugins=dict(root="ArrayCore"))
+vcbot = Client("bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH, (root="ArrayCore"))
 contact_filter = filters.create(lambda _, __, message:(message.from_user and message.from_user.is_contact) or message.outgoing)
 start_time = time.time()
 
