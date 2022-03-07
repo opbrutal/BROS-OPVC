@@ -16,7 +16,8 @@ from search import (Venom1, Venom2, Venom3, Venom4,
 @vcbot.on_message(filters.user(SUDO_USERS) & filters.private & filters.command(["end"], prefixes=HNDLR))
 async def ping(_, e: Message):
     await e.delete()
-    chat_id = e.chat.id
+    inp = e.text[5:]
+    chat_id = await vcbot.get_chat(inp)
     if chat_id in QUEUE:
         try:
             await call_py.leave_group_call(chat_id)
