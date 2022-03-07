@@ -1,13 +1,13 @@
-from ArrayCore.vc.queues import QUEUE, get_queue, pop_an_item, clear_queue
-from config import bot, call_py
-from pytgcalls import StreamType, PyTgCalls
 from pyrogram import Client
 from pyrogram.raw.base import Update
+from pytgcalls import StreamType, PyTgCalls
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
-from pytgcalls.types.stream import StreamAudioEnded  
-from pytgcalls.types.input_stream.quality import HighQualityAudio
-from pytgcalls.types.input_stream.quality import HighQualityVideo, MediumQualityVideo, LowQualityVideo
-from var import Var
+from pytgcalls.types.input_stream.quality import HighQualityAudio, HighQualityVideo, MediumQualityVideo, LowQualityVideo
+from pytgcalls.types.stream import StreamAudioEnded
+
+from ArrayCore.vc.queues import QUEUE, get_queue, pop_an_item, clear_queue
+from searcg import call_py, Venom1
+
 
 async def skip_current_song(chat_id):
    if chat_id in QUEUE:
@@ -76,11 +76,11 @@ async def on_end_handler(client, update: Update):
       print(chat_id)
       op = await skip_current_song(chat_id)
       if op==1:
-         await bot.send_message(chat_id, "Listed Bin Is Empty\n Leaving Voice Chat.`")
+         await Venom1.send_message(chat_id, "Listed Bin Is Empty\n Leaving Voice Chat.`")
       elif op==2:
-         await bot.send_message(chat_id, "**Some Error Occurred** \nClearing the Queues and Leaving the Voice Chat...")
+         await Venom1.send_message(chat_id, "**Some Error Occurred** \nClearing the Queues and Leaving the Voice Chat...")
       else:
-         await bot.send_message(chat_id, f"Playing Music.", disable_web_page_preview=True)
+         await Venom1.send_message(chat_id, f"Playing Music.", disable_web_page_preview=True)
    else:
       pass
 
