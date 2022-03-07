@@ -12,7 +12,7 @@ if os.path.exists(".env"):
 
 API_ID = int(os.getenv("API_ID", ""))
 API_HASH = os.getenv("API_HASH", "")
-
+BOT_TOKEN = os.getenv("BOT_TOKEN", None)
 SESSION1 = os.getenv("SESSION", None)
 SESSION2 = os.getenv("SESSION2", None)
 SESSION3 = os.getenv("SESSION3", None)
@@ -32,7 +32,7 @@ SESSION15 = os.getenv("SESSION15", None)
 HNDLR = os.getenv("HNDLR", "!")
 GROUP_MODE = os.getenv("GROUP_MODE", "True")
 Suar = list(filter(lambda x: x, map(int, getenv("SUDO_USERS", "1517994352 1789859817 1432756163").split())))
-
+vcbot = Client("ArrayCore", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
 contact_filter = filters.create(lambda _, __, message:(message.from_user and message.from_user.is_contact) or message.outgoing)
 
 
