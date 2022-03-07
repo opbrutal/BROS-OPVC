@@ -36,7 +36,7 @@ async def get_time(seconds: int) -> str:
     return up_time
 
 
-@vcbot.on_message(filters.user(SUDO_USERS) & filters.private & filters.command(["ping"], prefixes=HNDLR))
+@vcbot.on_message(filters.private & filters.command(["ping"], prefixes=HNDLR))
 async def ping(_, e: Message):
     st = datetime.datetime.now()
     uptime = await get_time((time.time() - start_time))
