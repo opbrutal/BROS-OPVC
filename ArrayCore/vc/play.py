@@ -69,21 +69,8 @@ async def ytdl(link):
     else:
         return 0, stderr.decode()
 
-@Client.on(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client2.on(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client3.on(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client4.on(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client5.on(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client6.on(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client7.on(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client8.on(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client9.on(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client10.on(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client11.on(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client12.on(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client13.on(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client14.on(filters.command(["play"], prefixes=f"{HNDLR}"))
-@Client15.on(filters.command(["play"], prefixes=f"{HNDLR}"))
+
+@vcbot.on_message(filters.user(SUDO_USERS) & filters.private & filters.command(["play"], prefixes=HNDLR))
 async def ping(_, e: Message):
     if e.from_user.id in SUDO_USERS:
         replied = e.reply_to_message
