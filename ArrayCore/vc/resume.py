@@ -11,21 +11,7 @@ SUDO_USERS = []
 for x in Var.SUDO_USERS: 
     SUDO_USERS.append(x)
 
-@Client.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client2.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client3.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client4.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client5.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client6.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client7.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client8.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client9.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client10.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client11.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client12.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client13.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client14.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
-@Client15.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
+@vcbot.on_message(filters.user(SUDO_USERS) & filters.private & filters.command(["pause"], prefixes=HNDLR))
 async def ping(_, e: Message):
     if e.from_user.id in SUDO_USERS:
         await e.delete()
