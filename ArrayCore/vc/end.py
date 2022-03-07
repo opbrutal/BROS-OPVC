@@ -2,14 +2,14 @@ import os
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from config import SUDO_USERS
+
 from ArrayCore.vc.handlers import skip_current_song, skip_item
 from ArrayCore.vc.queues import clear_queue, QUEUE
 from search import (Venom1, Venom2, Venom3, Venom4,
                     Venom5, Venom6, Venom7, Venom8,
                     Venom9, Venom10, Venom11, Venom12,
                     Venom13, Venom14, Venom15, HNDLR,
-                    vcbot, call_py, contact_filter)
+                    call_py, contact_filter, SUDO_USERS)
 
 
 
