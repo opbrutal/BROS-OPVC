@@ -54,76 +54,76 @@ else:
 
 #-------------------------CLIENTS-----------------------------
 if SESSION1:
-    Venom1 = Client(SESSION1, api_id=API_ID, api_hash=API_HASH)
+    Venom1 = Client(SESSION1, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
     call_py = PyTgCalls(Venom1)
 
 if SESSION2:
-    Venom2 = Client(SESSION2, api_id=API_ID, api_hash=API_HASH)
+    Venom2 = Client(SESSION2, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
 else:
     Venom2 = None
 
 if SESSION3:
-    Venom3 = Client(SESSION3, api_id=API_ID, api_hash=API_HASH)
+    Venom3 = Client(SESSION3, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
 else:
     Venom3 = None
 
 if SESSION4:
-    Venom4 = Client(SESSION4, api_id=API_ID, api_hash=API_HASH)
+    Venom4 = Client(SESSION4, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
 else:
     Venom4 = None
 
 if SESSION5:
-    Venom5 = Client(SESSION5, api_id=API_ID, api_hash=API_HASH)
+    Venom5 = Client(SESSION5, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
 else:
     Venom5 = None
 
 if SESSION6:
-    Venom6 = Client(SESSION6, api_id=API_ID, api_hash=API_HASH)
+    Venom6 = Client(SESSION6, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
 else:
     Venom6 = None
         
 if SESSION7:
-    Venom7 = Client(SESSION7, api_id=API_ID, api_hash=API_HASH)
+    Venom7 = Client(SESSION7, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
 else:
     Venom7 = None
 
 if SESSION8:
-    Venom8 = Client(SESSION8, api_id=API_ID, api_hash=API_HASH)
+    Venom8 = Client(SESSION8, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
 else:
     Venom8 = None
 
 if SESSION9:
-    Venom9 = Client(SESSION9, api_id=API_ID, api_hash=API_HASH)
+    Venom9 = Client(SESSION9, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
 else:
     Venom9 = None
     
 if SESSION10:
-    Venom10 = Client(SESSION10, api_id=API_ID, api_hash=API_HASH)
+    Venom10 = Client(SESSION10, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
 else:
     Venom10 = None
            
 if SESSION11:
-    Venom11 = Client(SESSION11, api_id=API_ID, api_hash=API_HASH)
+    Venom11 = Client(SESSION11, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
 else:
     Venom11 = None
 
 if SESSION12:
-    Venom12 = Client(SESSION12, api_id=API_ID, api_hash=API_HASH)
+    Venom12 = Client(SESSION12, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
 else:
     Venom12 = None
 
 if SESSION13:
-    Venom13 = Client(SESSION13, api_id=API_ID, api_hash=API_HASH)
+    Venom13 = Client(SESSION13, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
 else:
     Venom13 = None
 
 if SESSION14:
-    Venom14 = Client(SESSION14, api_id=API_ID, api_hash=API_HASH)
+    Venom14 = Client(SESSION14, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
 else:
     Venom14 = None
 
 if SESSION15:
-    Venom15 = Client(SESSION15, api_id=API_ID, api_hash=API_HASH)
+    Venom15 = Client(SESSION15, api_id=API_ID, api_hash=API_HASH, plugins={'root': 'ArrayCore.vc'})
 else:
     Venom15 = None
 #----------------------------------------------------------------
