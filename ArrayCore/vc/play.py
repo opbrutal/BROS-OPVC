@@ -28,7 +28,11 @@ from pytgcalls.types.input_stream.quality import (
 from youtubesearchpython import VideosSearch
 from utils import CHAT_TITLE, gen_thumb
 from ArrayCore.vc.queues import QUEUE, add_to_queue, get_queue
-from search import Client, Client2, Client3, Client4, Client5, Client6, Client7, Client8, Client9, Client10, Client11, Client12, Client13, Client14, Client15
+from search import (Venom1, Venom2, Venom3, Venom4,
+                    Venom5, Venom6, Venom7, Venom8,
+                    Venom9, Venom10, Venom11, Venom12,
+                    Venom13, Venom14, Venom15, vcbot,
+                    HNDLR, call_py, contact_filter, SUDO_USERS)
 
 logging.basicConfig(level=logging.INFO)
 
