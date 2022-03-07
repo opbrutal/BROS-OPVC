@@ -17,7 +17,8 @@ from search import (Venom1, Venom2, Venom3, Venom4,
 async def ping(_, e: Message):
     await e.delete()
     inp = e.text[5:]
-    chat_id = await vcbot.get_chat(inp)
+    chat_ = await vcbot.get_chat(inp)
+    chat_id = chat_.id
     if chat_id in QUEUE:
         try:
             await call_py.leave_group_call(chat_id)
