@@ -36,11 +36,10 @@ vcbot = Client("ArrayCore", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HAS
 contact_filter = filters.create(lambda _, __, message:(message.from_user and message.from_user.is_contact) or message.outgoing)
 
 
-if GROUP_MODE.lower() == "true"
+if GROUP_MODE == ("True" or "true"):
     grp = True
 else:
     grp = False
-GRPPLAY = grp
 
 
 if SESSION1:
