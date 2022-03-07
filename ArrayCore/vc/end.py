@@ -15,7 +15,6 @@ from search import (Venom1, Venom2, Venom3, Venom4,
 
 @vcbot.on_message(filters.user(SUDO_USERS) & filters.private & filters.command(["end"], prefixes=HNDLR))
 async def ping(_, e: Message):
-    await e.delete()
     inp = e.text[5:]
     chat_ = await vcbot.get_chat(inp)
     chat_id = chat_.id
