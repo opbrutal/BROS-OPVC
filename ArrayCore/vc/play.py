@@ -61,16 +61,14 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@vcbot.on_message(filters.user(SUDO_USERS) & filters.private & filters.command(["play"], prefixes=HNDLR))
+@vcbot.on_message(filters.user(SUDO_USERS) & ~filters.private & filters.command(["play"], prefixes=HNDLR))
 async def ping(_, e: Message):
     replied = e.reply_to_message
-    inp = e.text[5:]
-    chat_ = await vcbot.get_chat(inp)
-    chat_id = chat_.id
+    chat_id = e.chat.id
     if replied:
         if replied.audio or replied.voice:
             await e.delete()
-            TheVenomXD = await replied.reply_text("**Reading Mp3.**")
+            TheVenomXD = await replied.reply_text("**Transcoding Mp3...**")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -83,25 +81,19 @@ async def ping(_, e: Message):
             if chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await TheVenomXD.delete()
-                caption="**Playing In {chat_id}**"
+                await e.reply_text(f"**> Playing in:** {e.chat.title} \n\n**> Song:** {songname} \n**> Position:** #{pos}")
             else:
-                await call_py.join_group_call(
-                    chat_id,
-                    AudioPiped(
-                        dl,
-                    ),
-                    stream_type=StreamType().pulse_stream,
-                )
+                await call_py.join_group_call(chat_id, AudioPiped(dl), stream_type=StreamType().pulse_stream)
                 add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await TheVenomXD.delete()
-                caption="**Playing In {chat_id}**"
+                await e.reply_text(f"**> Playing in:** {e.chat.title} \n\n**> Song:** {songname} \n**> Position:** Currently Playing")
     else:
         if len(e.command) < 2:
             await e.reply_text("Reply to Audio File or provide something for Searching ...")
         else:
             await e.delete()
-            TheVenomXD = await e.reply_text(" Searching...")
-            query = e.text.split(None, 1)[1]
+            TheVenomXD = await e.reply_text("__Searching...__")
+            query = e.text.split(" ", 1)[1]
             search = ytsearch(query)
             if search == 0:
                 await TheVenomXD.edit("`Didn't Find Anything for the Given Query`")
@@ -112,7 +104,8 @@ async def ping(_, e: Message):
                 duration = search[2]
                 thumbnail = search[3]
                 userid = e.from_user.id
-                srrf = chat_.title
+                user_name = e.from_user.first_name
+                srrf = e.chat.title
                 ctitle = await CHAT_TITLE(srrf)
                 thumb = await gen_thumb(thumbnail, title, userid, ctitle)
                 hm, ytlink = await ytdl(url)
@@ -122,21 +115,13 @@ async def ping(_, e: Message):
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                         await TheVenomXD.delete()
-                        caption=f"""**Playing In {chat_id}**"""
+                        await e.reply_photo(photo=thumb, caption=f"**> Playing in:** {srrf} \n\n**> Song:** {songname} \n**> Position:** #{pos} \n\n**BY:** [{user_name}]({userid})")
                     else:
                         try:
-                            await call_py.join_group_call(
-                                chat_id,
-                                AudioPiped(
-                                    ytlink,
-                                ),
-                                stream_type=StreamType().pulse_stream,
-                            )
+                            await call_py.join_group_call(chat_id, AudioPiped(ytlink), stream_type=StreamType().pulse_stream)
                             add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                             await TheVenomXD.delete()
-                            caption=f"""**Playing In {chat_id}**"""
+                            await e.reply_photo(photo=thumb, caption=f"**> Playing in:** {srrf} \n\n**> Song:** {songname} \n**> Position:** Currently Playing \n\n**By:** [{user_name}]({userid})")
                         except Exception as ep:
                             await TheVenomXD.edit(f"`{ep}`")
 
-
-# bohot errors h bc isme
