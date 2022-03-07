@@ -10,11 +10,9 @@ from search import (Venom1, Venom2, Venom3, Venom4,
                     HNDLR, call_py, contact_filter, SUDO_USERS)
 
 
-@vcbot.on_message(filters.user(SUDO_USERS) & filters.private & filters.command(["skip"], prefixes=HNDLR))
+@vcbot.on_message(filters.user(SUDO_USERS) & ~filters.private & filters.command(["skip"], prefixes=HNDLR))
 async def ping(_, e: Message):
-    inp = e.text[5:]
-    chat_ = await vcbot.get_chat(inp)
-    chat_id = chat_.id
+    chat_id = e.chat.id
     if len(e.command) < 2:
         op = await skip_current_song(chat_id)
         if op == 0:
