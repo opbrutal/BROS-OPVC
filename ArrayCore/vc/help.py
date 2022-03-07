@@ -26,6 +26,6 @@ Use Your Command HNDLR To Use It I Am Giving ! As Default
 """
 
   
-@vcbot.on_message(filters.user(SUDO_USERS) & filters.private & filters.command(["help"], prefixes=HNDLR))
+@vcbot.on_message(filters.user(SUDO_USERS) & filters.command(["help"], prefixes=HNDLR))
 async def ping(_, e: Message):
        await e.reply_text(HELP, disable_web_page_preview=True)
