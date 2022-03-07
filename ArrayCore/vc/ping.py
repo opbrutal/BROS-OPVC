@@ -40,7 +40,7 @@ async def get_time(seconds: int) -> str:
 async def ping(_, e: Message):
     st = datetime.datetime.now()
     uptime = await get_time((time.time() - start_time))
-    x = await message.reply_text("**Ping !!**")
+    x = await e.reply_text("**Ping !!**")
     et = datetime.now()
     pt = (et-st).microseconds / 1000
     await x.edit_text(f"**Alive !!**\n\nPing: `{pt} ms` \nUptime: `{uptime}`")
