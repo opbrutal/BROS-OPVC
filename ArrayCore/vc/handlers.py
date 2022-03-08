@@ -6,14 +6,14 @@ from pytgcalls.types.input_stream.quality import HighQualityAudio, HighQualityVi
 from pytgcalls.types.stream import StreamAudioEnded
 
 from ArrayCore.vc.queues import QUEUE, get_queue, pop_an_item, clear_queue
-from search import call_py, Venom1
+from search import call_py1, Venom1
 
 
 async def skip_current_song(chat_id):
    if chat_id in QUEUE:
       chat_queue = get_queue(chat_id)
       if len(chat_queue)==1:
-         await call_py.leave_group_call(chat_id)
+         await call_py1.leave_group_call(chat_id)
          clear_queue(chat_id)
          return 1
       else:
@@ -24,7 +24,7 @@ async def skip_current_song(chat_id):
          type = chat_queue[1][3]
          Q = chat_queue[1][4]
          if type=="Audio":
-            await call_py.change_stream(
+            await call_py1.change_stream(
                chat_id,
                AudioPiped(
                   url,
@@ -37,7 +37,7 @@ async def skip_current_song(chat_id):
                hm = MediumQualityVideo()
             elif Q==360:
                hm = LowQualityVideo()
-            await call_py.change_stream(
+            await call_py1.change_stream(
                chat_id,
                AudioVideoPiped(
                   url,
@@ -48,7 +48,7 @@ async def skip_current_song(chat_id):
          pop_an_item(chat_id)
          return [songname, link, type]
        except:
-         await call_py.leave_group_call(chat_id)
+         await call_py1.leave_group_call(chat_id)
          clear_queue(chat_id)
          return 2
    else:
@@ -69,14 +69,14 @@ async def skip_item(chat_id, h):
       return 0
       
 
-@call_py.on_stream_end()
+@call_py1.on_stream_end()
 async def on_end_handler(client, update: Update):
    if isinstance(update, StreamAudioEnded):
       chat_id = update.chat_id
       print(chat_id)
       op = await skip_current_song(chat_id)
       if op==1:
-         await Venom1.send_message(chat_id, "Listed Bin Is Empty\n Leaving Voice Chat.`")
+         await Venom1.send_message(chat_id, "Listed Bin Is Empty\nLeaving Voice Chat.`")
       elif op==2:
          await Venom1.send_message(chat_id, "**Some Error Occurred** \nClearing the Queues and Leaving the Voice Chat...")
       else:
@@ -87,7 +87,7 @@ async def on_end_handler(client, update: Update):
 
 # When someone ends the Voice Chat without stopping the Playback
 
-@call_py.on_closed_voice_chat()
+@call_py1.on_closed_voice_chat()
 async def close_handler(client: PyTgCalls, chat_id: int):
    if chat_id in QUEUE:
       clear_queue(chat_id)
