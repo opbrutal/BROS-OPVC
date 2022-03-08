@@ -5,7 +5,7 @@ from pyrogram import idle
 from . import (Venom1, Venom2, Venom3, Venom4,
                Venom5, Venom6, Venom7, Venom8,
                Venom9, Venom10, Venom11, Venom12,
-               Venom13, Venom14, Venom15, vcbot)
+               Venom13, Venom14, Venom15, vcbot, call_py)
 
 
 async def startup():
@@ -131,6 +131,7 @@ async def startup():
         print("Client 15 not found")
     
     await vcbot.start()
+    await call_py.start()
 
     print("••• Bot Started •••")
     await idle()
