@@ -17,12 +17,7 @@ from youtubesearchpython import VideosSearch
 
 from ArrayCore.vc.queues import QUEUE, add_to_queue, get_queue
 from utils import CHAT_TITLE, gen_thumb
-from search import (Venom1, Venom2, Venom3, Venom4,
-                    Venom5, Venom6, Venom7, Venom8,
-                    Venom9, Venom10, Venom11, Venom12,
-                    Venom13, Venom14, Venom15, vcbot,
-                    HNDLR, call_py, contact_filter,
-                    SUDO_USERS)
+from search import vcbot, call_py1, HNDLR, SUDO_USERS)
 
 logging.basicConfig(level=logging.INFO)
 
@@ -83,7 +78,7 @@ async def ping(_, e: Message):
                 await TheVenomXD.delete()
                 await e.reply_text(f"**> Playing in:** {e.chat.title} \n\n**> Song:** {songname} \n**> Position:** #{pos}")
             else:
-                await call_py.join_group_call(chat_id, AudioPiped(dl), stream_type=StreamType().pulse_stream)
+                await call_py1.join_group_call(chat_id, AudioPiped(dl), stream_type=StreamType().pulse_stream)
                 add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await TheVenomXD.delete()
                 await e.reply_text(f"**> Playing in:** {e.chat.title} \n\n**> Song:** {songname} \n**> Position:** Currently Playing")
@@ -118,7 +113,7 @@ async def ping(_, e: Message):
                         await e.reply_photo(photo=thumb, caption=f"**> Playing in:** {srrf} \n\n**> Song:** {songname} \n**> Position:** #{pos} \n\n**BY:** [{user_name}]({userid})")
                     else:
                         try:
-                            await call_py.join_group_call(chat_id, AudioPiped(ytlink), stream_type=StreamType().pulse_stream)
+                            await call_py1.join_group_call(chat_id, AudioPiped(ytlink), stream_type=StreamType().pulse_stream)
                             add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                             await TheVenomXD.delete()
                             await e.reply_photo(photo=thumb, caption=f"**> Playing in:** {srrf} \n\n**> Song:** {songname} \n**> Position:** Currently Playing \n\n**By:** [{user_name}]({userid})")
