@@ -27,7 +27,7 @@ logging.basicConfig(level=logging.INFO)
 
 @vcbot.on_message(filters.user(SUDO_USERS) & filters.private & filters.command(["vcraid"], prefixes=HNDLR))
 async def vcraid(_, e: Message):
-    inp = e.text[5:]
+    inp = e.text[8:]
     chat_ = await vcbot.get_chat(inp)
     chat_id = chat_.id
 
