@@ -47,7 +47,7 @@ vcbot = Client(
     plugins={'root': 'ArrayCore.vc'},
 )
 
-contact_filter = filters.create(lambda _, __, message:(message.from_user and message.from_user.is_contact) or message.outgoing)
+HELP_DICT = dict()
 start_time = time.time()
 
 if GROUP_MODE == ("True" or "true" or "TRUE"):
