@@ -4,7 +4,7 @@ from pytgcalls import StreamType, PyTgCalls
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import HighQualityAudio, HighQualityVideo, MediumQualityVideo, LowQualityVideo
 from pytgcalls.types.stream import StreamAudioEnded
-
+from search import vcbot 
 from ArrayCore.vc.queues import QUEUE, get_queue, pop_an_item, clear_queue
 from search import call_py1, Venom1
 
@@ -76,11 +76,11 @@ async def on_end_handler(client, update: Update):
       print(chat_id)
       op = await skip_current_song(chat_id)
       if op==1:
-         await Venom1.send_message(chat_id, "Listed Bin Is Empty\nLeaving Voice Chat.`")
+         await vcbot.send_message(chat_id, "Listed Bin Is Empty\nLeaving Voice Chat.`")
       elif op==2:
-         await Venom1.send_message(chat_id, "**Some Error Occurred** \nClearing the Queues and Leaving the Voice Chat...")
+         await vcbot.send_message(chat_id, "**Some Error Occurred** \nClearing the Queues and Leaving the Voice Chat...")
       else:
-         await Venom1.send_message(chat_id, f"Playing Music.", disable_web_page_preview=True)
+         await vcbot.send_message(chat_id, f"Playing Music.", disable_web_page_preview=True)
    else:
       pass
 
