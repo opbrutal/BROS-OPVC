@@ -193,8 +193,8 @@ HELP_DICT["VC Raid"] = f"""
 **Commad:** `{hl}vcraid`
 **Usage:** __Raids the mentioned voice chat.__
 **Example:**
-    ~ `{hl}vcraid <chat username/id> [If in bot PM.]
-    ~ `{hl}vcraid` [If in a group.]
+    ~ `{hl}vcraid <chat username/id> [If in bot PM.]`
+    ~ `{hl}vcraid` [If in a group.]`
 
 **Commad:** `{hl}raidend`
 **Usage:** __Stops the voice chat raid and leaves voice chat.__
