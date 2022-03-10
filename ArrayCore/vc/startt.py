@@ -8,6 +8,7 @@ from config import bot, call_py, HNDLR, contact_filter
 from time import time
 from datetime import datetime
 from search import vcbot
+
 SUDO_USERS = []
 for x in Var.SUDO_USERS: 
     SUDO_USERS.append(x)
@@ -15,9 +16,9 @@ for x in Var.SUDO_USERS:
 @vcbot.on_message(filters.command(["start"], prefixes=f"{HNDLR}"))
 async def start(_, e: Message):
     if e.from_user.id in SUDO_USERS:
-    HELP = f"""
+        START = f"""
 Vc Raid Bot Is Working Fine 
 Send !help To Know Your Commands
 Powered By @ArrayCore
 """
-   await e.reply(HELP)
+       await e.reply(HELP)
