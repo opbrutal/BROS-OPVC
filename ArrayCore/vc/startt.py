@@ -21,4 +21,4 @@ Vc Raid Bot Is Working Fine
 Send !help To Know Your Commands
 Powered By @ArrayCore
 """
-       await e.reply(HELP)
+        await e.reply(HELP)
