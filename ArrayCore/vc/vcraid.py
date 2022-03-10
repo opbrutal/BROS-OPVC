@@ -4,7 +4,7 @@ import logging
 import os
 import re
 import sys
-
+from ArrayCore.Audio import AUD1.mp3, AUD2.mp3
 from asyncio import sleep
 
 from pyrogram import Client, filters
