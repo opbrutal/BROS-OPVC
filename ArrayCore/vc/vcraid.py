@@ -33,7 +33,7 @@ async def vcraid(_, e: Message):
 
     if inp:
         TheVenomXD = await e.reply_text("**Starting VC raid**")
-        audio_ = await get_audio_file(vcbot, "VcRaidArrayCore")
+        audio_ = await get_audio_file(vcbot, "AUD1.mp3")
         dl = await audio_.download()
         link = audio_
         songname = dl.file_name[:35] + "..."
