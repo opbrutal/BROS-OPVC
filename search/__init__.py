@@ -48,6 +48,7 @@ vcbot = Client(
 )
 
 HELP_DICT = dict()
+hl = HNDLR[0]
 start_time = time.time()
 
 if GROUP_MODE == ("True" or "true" or "TRUE"):
@@ -162,3 +163,58 @@ else:
     Venom15 = None
     call_py15 = None
 #----------------------------------------------------------------
+
+HELP_DICT["Music Player"] = f"""
+**Basic music player commands!**
+
+**Command:** `{hl}play`
+**Usage:** __Plays the song in voice chat. Supports replied audio, Youtube link or just a keyword to search.__
+**Example:** `{hl}play Closer`
+
+**Command:** `{hl}end`
+**Usage:** __Ends the music stream and leaves the voice chat.__
+
+**Commad:** `{hl}pause`
+**Usage:** __Pause the music stream in voice chat.__
+
+**Commad:** `{hl}list`
+**Usage:** __Shows the playlist in current chat.__
+
+**Commad:** `{hl}resume`
+**Usage:** __Resumes the paused stream in voice chat.__
+
+**Commad:** `{hl}skip`
+**Usage:** __Skips the current song playing in voice chat.__
+"""
+
+HELP_DICT["VC Raid"] = f"""
+**Voice Chat Raiding Commands!**
+
+**Commad:** `{hl}vcraid`
+**Usage:** __Raids the mentioned voice chat.__
+**Example:**
+    ~ `{hl}vcraid <chat username/id> [If in bot PM.]
+    ~ `{hl}vcraid` [If in a group.]
+
+**Commad:** `{hl}raidend`
+**Usage:** __Stops the voice chat raid and leaves voice chat.__
+
+**Commad:** `{hl}raidpause`
+**Usage:** __Pauses the voice chat raid.__
+
+**Commad:** `{hl}raidresume`
+**Usage:** __Resumes the paused voice chat raid.__
+"""
+
+HELP_DICT["Extras"] = f"""
+**Some extra commands!**
+
+**Commad:** `{hl}restart`
+**Usage:**  __To restart and update the bot.__
+
+**Commad:** `{hl}help`
+**Usage:** __To see the help menu with all command details.__
+
+**Commad:** `{hl}start`
+**Usage:**  __To see the start message.__
+"""
