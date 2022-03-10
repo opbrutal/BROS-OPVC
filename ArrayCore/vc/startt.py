@@ -6,6 +6,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from time import time
 from datetime import datetime
+from search import vcbot 
 
 SUDO_USERS = []
 for x in Var.SUDO_USERS: 
