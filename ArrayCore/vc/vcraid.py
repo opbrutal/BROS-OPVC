@@ -20,7 +20,7 @@ from search import (call_py1, call_py2, call_py3, call_py4,
                     call_py5, call_py6, call_py7, call_py8,
                     call_py9, call_py10, call_py11, call_py12,
                     call_py13, call_py14, call_py15, vcbot, 
-                    HNDLR, SUDO_USERS)
+                    HNDLR, SUDO_USERS, Venom1)
 
 logging.basicConfig(level=logging.INFO)
 
@@ -36,7 +36,7 @@ async def vcraid(_, e: Message):
     uid = e.from_user.id
     if gid == uid:
         inp = e.text[8:]
-        chat_ = await vcbot.get_chat(inp)
+        chat_ = await Venom1.get_chat(inp)
         chat_id = chat_.id
     else:
          chat_id = gid
