@@ -40,9 +40,9 @@ async def vcraid(_, e: Message):
         TheVenomXD = await e.reply_text("**Starting VC raid**")
         audio_ = aud
         link = aud
-        dl = aud
+        #dl = aud
         #audio_ = await get_audio_file(vcbot, "AUD1")
-        #dl = await audio_.download()
+        dl = await aud.download()
         #link = audio_
         songname = dl.file_name[:35] + "..."
         if chat_id in QUEUE:
