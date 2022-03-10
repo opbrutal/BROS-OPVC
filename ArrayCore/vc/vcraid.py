@@ -4,9 +4,9 @@ import logging
 import os
 import re
 import sys
-from ArrayCore.Audio import AUD1, AUD2
-from asyncio import sleep
 
+from asyncio import sleep
+from random import choice
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pytgcalls import StreamType
@@ -24,18 +24,24 @@ from search import (call_py1, call_py2, call_py3, call_py4,
 
 logging.basicConfig(level=logging.INFO)
 
+aud_list = [
+    "./ArrayCore/Audio/AUD1.mp3",
+    "./ArrayCore/Audio/AUD2.mp3",
+]
+
 
 @vcbot.on_message(filters.user(SUDO_USERS) & filters.private & filters.command(["vcraid"], prefixes=HNDLR))
 async def vcraid(_, e: Message):
     inp = e.text[8:]
     chat_ = await vcbot.get_chat(inp)
     chat_id = chat_.id
-
+    aud = choice(aud_list)
     if inp:
         TheVenomXD = await e.reply_text("**Starting VC raid**")
-        audio_ = await get_audio_file(vcbot, "AUD1")
-        dl = await audio_.download()
-        link = audio_
+        audio_, link, dl = aud
+        #audio_ = await get_audio_file(vcbot, "AUD1")
+        #dl = await audio_.download()
+        #link = audio_
         songname = dl.file_name[:35] + "..."
         if chat_id in QUEUE:
             pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
