@@ -10,8 +10,8 @@ from search import vcbot, SUDO_USERS, HNDLR
 
 @vcbot.on_message(filters.user(SUDO_USERS) & ~filters.private & filters.command(["start"], prefixes=HNDLR))
 async def start(_, e: Message):
-    if e.from_user.id in SUDO_USERS:
-        HELP = f"""
+    await client.send_message(
+        text = f"""
 Vc Raid Bot Is Working Fine 
 Send !help To Know Your Commands
 Powered By @ArrayCore
