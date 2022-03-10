@@ -33,6 +33,15 @@ SESSION15 = os.getenv("SESSION15", None)
 HNDLR = os.getenv("HNDLR", "!")
 GROUP_MODE = os.getenv("GROUP_MODE", "True")
 
+
+def make_int(str_input):
+    str_list = str_input.split(" ")
+    int_list = []
+    for x in str_list:
+        int_list.append(int(x))
+    return int_list
+
+
 sudo = os.getenv("SUDO_USERS")
 SUDO_USERS = []
 if sudo:
@@ -56,13 +65,6 @@ vcbot = Client(
 HELP_DICT = dict()
 hl = HNDLR[0]
 start_time = time.time()
-
-def make_int(str_input):
-    str_list = str_input.split(" ")
-    int_list = []
-    for x in str_list:
-        int_list.append(int(x))
-    return int_list
 
 
 if GROUP_MODE == ("True" or "true" or "TRUE"):
