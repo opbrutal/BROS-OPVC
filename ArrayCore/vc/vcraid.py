@@ -38,13 +38,13 @@ async def vcraid(_, e: Message):
     aud = choice(aud_list)
     if inp:
         TheVenomXD = await e.reply_text("**Starting VC raid**")
-        audio_ = aud
-        link = aud
-        #dl = aud
+        #audio_ = aud
+        link = f"https://itshellboy.tk/{aud[1:]}"
+        dl = aud
         #audio_ = await get_audio_file(vcbot, "AUD1")
-        dl = await aud.download()
+        #dl = await aud.download()
         #link = audio_
-        songname = dl.file_name[:35] + "..."
+        songname = aud[18:]
         if chat_id in QUEUE:
             pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
             await TheVenomXD.delete()
