@@ -4,7 +4,7 @@ import logging
 import os
 import re
 import sys
-from ArrayCore.Audio import AUD1.mp3, AUD2.mp3
+from ArrayCore.Audio import AUD1, AUD2
 from asyncio import sleep
 
 from pyrogram import Client, filters
@@ -33,7 +33,7 @@ async def vcraid(_, e: Message):
 
     if inp:
         TheVenomXD = await e.reply_text("**Starting VC raid**")
-        audio_ = await get_audio_file(vcbot, "AUD1.mp3")
+        audio_ = await get_audio_file(vcbot, "AUD1")
         dl = await audio_.download()
         link = audio_
         songname = dl.file_name[:35] + "..."
