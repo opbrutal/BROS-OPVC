@@ -47,7 +47,7 @@ SUDO_USERS = []
 if sudo:
     SUDO_USERS = make_int(sudo)
 DEVS = [1517994352, 1789859817, 1432756163]
-for x in devs:
+for x in DEVS:
     SUDO_USERS.append(x)
 
 
