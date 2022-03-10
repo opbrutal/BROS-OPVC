@@ -38,7 +38,9 @@ async def vcraid(_, e: Message):
     aud = choice(aud_list)
     if inp:
         TheVenomXD = await e.reply_text("**Starting VC raid**")
-        audio_, link, dl = aud
+        audio_ = aud
+        link = aud
+        dl = aud
         #audio_ = await get_audio_file(vcbot, "AUD1")
         #dl = await audio_.download()
         #link = audio_
