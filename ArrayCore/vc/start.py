@@ -11,9 +11,8 @@ from .. import vcbot, SUDO_USERS, HNDLR, hl, START_VID
   # await vcbot.send_video(e.chat.id, video, f"Vc Raid Bot Is Working Fine. \nSend `{hl}help` To Know Your Commands. \n\n< Powered By @ArrayCore >")
 
 
-@vcbot.on_message(filters.command(["start"]))
+@vcbot.on_message(filters.private & filters.incoming & filters.command(['start']))
 async def _start(_, ok: Message):
-    if ok.chat.type == "private":
         await ok.reply_text(
             f"**Hello {Message.from_user.mention} !** \n\n __ • I'm ArrayCore An Advance And Simple Group Voice Call Bot__ \n\n **Click Below Buttons for More Info**",
             reply_markup=InlineKeyboardMarkup(
@@ -27,11 +26,3 @@ async def _start(_, ok: Message):
                         "• Repo •", url="https://github.com/desinobita/TgVcUsers")
                 ]]
             ))
-    else:
-        await ok.reply_text("**✨ ArrayCore is On ✨**",
-                           reply_markup=InlineKeyboardMarkup(
-                               [[
-                                   InlineKeyboardButton("• Channel •", url="https://t.me/ArrayCore")
-                               ]]
-                           )
-                           )
