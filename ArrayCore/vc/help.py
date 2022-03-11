@@ -8,7 +8,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from time import time
 
-from search import vcbot, HNDLR, SUDO_USERS, HELP_DICT
+from ..utils import vcbot, HNDLR, SUDO_USERS, HELP_DICT
 
 HELP = f"""Help Menu For VcRaid By [Akash](https/t.me/TheVenomXD).
 
