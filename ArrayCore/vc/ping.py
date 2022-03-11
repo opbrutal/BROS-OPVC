@@ -7,7 +7,7 @@ import time
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from ..utils import start_time, vcbot, HNDLR, SUDO_USERS
+from .. import start_time, vcbot, HNDLR, SUDO_USERS
 
 
 async def get_time(seconds: int) -> str:
