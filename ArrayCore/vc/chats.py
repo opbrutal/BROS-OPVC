@@ -119,6 +119,6 @@ async def leave(_, e: Message):
         if Venom15:
             await Venom15.leave_chat(inp)
             count += 1
-        await e.reply_text(f"**Left** `{count}` **chats!**")
+        await e.reply_text(f"**Left with** `{count}` **accounts!**")
     except Exception as ex:
         await e.reply_text(f"**ERROR:** \n\n{str(ex)}")
