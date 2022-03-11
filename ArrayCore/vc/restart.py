@@ -4,7 +4,7 @@ import sys
 from pyrogram import filters
 from pyrogram.types import Message
 
-from search import vcbot, HNDLR, SUDO_USERS
+from ..utils import vcbot, HNDLR, SUDO_USERS
     
 
 @vcbot.on_message(filters.user(SUDO_USERS) & filters.command(["restart"], prefixes=HNDLR))
