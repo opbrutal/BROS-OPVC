@@ -16,7 +16,7 @@ from pytgcalls.types.input_stream.quality import (HighQualityAudio, HighQualityV
 
 from ArrayCore.vc.queues import QUEUE, add_to_queue, get_queue, clear_queue
 
-from ..utils import (call_py1, call_py2, call_py3, call_py4,
+from ArrayCore import (call_py1, call_py2, call_py3, call_py4,
                     call_py5, call_py6, call_py7, call_py8,
                     call_py9, call_py10, call_py11, call_py12,
                     call_py13, call_py14, call_py15, vcbot, 
