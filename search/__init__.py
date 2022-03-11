@@ -209,8 +209,11 @@ HELP_DICT["VC Raid"] = f"""
 **Commad:** `{hl}vcraid`
 **Usage:** __Raids the mentioned voice chat.__
 **Example:**
-    ~ `{hl}vcraid <chat username/id>` [If in bot PM.]
+    ~ `{hl}vcraid chat username/id` [If in bot PM.]
     ~ `{hl}vcraid` [If in a group.]
+
+**Explanation:**
+    ▪︎First Join All Your Id's In The Group By {hl}join `@chatlink` if chat is private Then {hl}join `https://t.me/+rNTg-asHGZYzODY1` \n Then Do {hl}vcraid In Groups 
 
 **Commad:** `{hl}raidend`
 **Usage:** __Stops the voice chat raid and leaves voice chat.__
