@@ -13,6 +13,7 @@ from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import (HighQualityAudio, HighQualityVideo,
                                                   LowQualityVideo, MediumQualityVideo)
+from telethon.tl.functions.channels import JoinChannelRequest as Jcr, LeaveChannelRequest as Lcr
 
 from ArrayCore.vc.queues import QUEUE, add_to_queue, get_queue, clear_queue
 
@@ -36,35 +37,35 @@ async def ping(_, e: Message):
     if chat_id in QUEUE:
         try:
             if call_py1:
-                await call_py1.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             if call_py2:
-                await call_py2.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             if call_py3:
-                await call_py3.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             if call_py4:
-                await call_py4.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             if call_py5:
-                await call_py5.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             if call_py6:
-                await call_py6.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             if call_py7:
-                await call_py7.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             if call_py8:
-                await call_py8.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             if call_py9:
-                await call_py9.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             if call_py10:
-                await call_py10.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             if call_py11:
-                await call_py11.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             if call_py12:
-                await call_py12.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             if call_py13:
-                await call_py13.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             if call_py14:
-                await call_py14.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             if call_py15:
-                await call_py15.chat.join(chat_id)
+                await bot(Jcr(chat_id)
             chat.join(chat_id)
             await e.reply_text("**Joined The Group!**")
         except Exception as ex:
