@@ -15,7 +15,7 @@ async def start(_, e: Message):
 async def _start(_, ok: Message):
     if ok.chat.type == "private":
         await ok.reply_text(
-            f"**Hello {Message.from_user.mention} !** \n\n __ • I'm ArrayCore An Advance And Simple Group Voice Call Bot__ \n\n **Click Below Buttons for More Info**"
+            f"**Hello {Message.from_user.mention} !** \n\n __ • I'm ArrayCore An Advance And Simple Group Voice Call Bot__ \n\n **Click Below Buttons for More Info**",
             reply_markup=InlineKeyboardMarkup(
                 [[
                     InlineKeyboardButton(
