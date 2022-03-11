@@ -3,7 +3,7 @@ from pyrogram.types import Message
 
 from ArrayCore.vc.handlers import skip_current_song, skip_item
 from ArrayCore.vc.queues import QUEUE, clear_queue
-from ..utils import vcbot, HNDLR, SUDO_USERS
+from .. import vcbot, HNDLR, SUDO_USERS
 
 
 @vcbot.on_message(filters.user(SUDO_USERS) & ~filters.private & filters.command(["skip"], prefixes=HNDLR))
