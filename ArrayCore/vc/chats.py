@@ -46,8 +46,8 @@ async def join(_, e: Message):
             await Venom14.join_chat(inp)
         if Venom15:
             await Venom15.join_chat(inp)
-    except Exception as e:
-        await e.reply_text(f"**ERROR:** \n\n{str(e)}")
+    except Exception as ex:
+        await e.reply_text(f"**ERROR:** \n\n{str(ex)}")
 
 
 @vcbot.on_message(filters.user(SUDO_USERS) & filters.command(["leave"], prefixes=HNDLR))
@@ -86,5 +86,5 @@ async def leave(_, e: Message):
             await Venom14.leave_chat(inp)
         if Venom15:
             await Venom15.leave_chat(inp)
-    except Exception as e:
-        await e.reply_text(f"**ERROR:** \n\n{str(e)}")
+    except Exception as ex:
+        await e.reply_text(f"**ERROR:** \n\n{str(ex)}")
