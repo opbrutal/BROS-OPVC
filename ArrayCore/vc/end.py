@@ -5,7 +5,7 @@ from pyrogram.types import Message
 
 from ArrayCore.vc.handlers import skip_current_song, skip_item
 from ArrayCore.vc.queues import clear_queue, QUEUE
-from search import call_py1, vcbot, HNDLR, SUDO_USERS
+from ..utils import call_py1, vcbot, HNDLR, SUDO_USERS
 
 
 
