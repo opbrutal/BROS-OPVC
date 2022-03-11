@@ -11,7 +11,7 @@ from .. import vcbot, SUDO_USERS, HNDLR, hl, START_VID
   # await vcbot.send_video(e.chat.id, video, f"Vc Raid Bot Is Working Fine. \nSend `{hl}help` To Know Your Commands. \n\n< Powered By @ArrayCore >")
 
 
-@vcbot.on_message(command(["start"]))
+@vcbot.on_message(filters.user(["start"]))
 async def _start(_, ok: Message):
     if ok.chat.type == "private":
         await ok.reply_text(
