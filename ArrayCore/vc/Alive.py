@@ -1,19 +1,16 @@
-from .. import (Venom1, Venom2, Venom3, Venom4,
-                    Venom5, Venom6, Venom7, Venom8,
-                    Venom9, Venom10, Venom11, Venom12,
-                    Venom13, Venom14, Venom15, HNDLR,
-                    SUDO_USERS, vcbot, ALIVE_PIC, __version__)
-                    
 from pyrogram import filters
 from pyrogram import __version__ as pyro_vr
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
+from .. import (Venom1, Venom2, Venom3, Venom4,
+                Venom5, Venom6, Venom7, Venom8,
+                Venom9, Venom10, Venom11, Venom12,
+                Venom13, Venom14, Venom15, HNDLR,
+                SUDO_USERS, vcbot, ALIVE_PIC, __version__)                   
 
+Array = ALIVE_PIC or "https://telegra.ph/file/fea7a0ef15a02dd5e4aac.jpg"
 
-Array = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph/file/fea7a0ef15a02dd5e4aac.jpg"
-
-
-    
+ 
 @vcbot.on_message(filters.user(SUDO_USERS) & filters.command(["alive"], prefixes=HNDLR))
 async def _Alive(_, e: Message):
     ids = 0
@@ -55,8 +52,9 @@ async def _Alive(_, e: Message):
         Array_msg += f"► Aᴄᴛɪᴠᴇ IDs : `{ids}` \n"
         Array_msg += f"► Sᴜᴘᴘᴏʀᴛ : [Jᴏɪɴ.](https://t.me/DNHxHELL) \n"
         Array_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n\n"
-        await Message.reply_photo(
+        await e.reply_photo(
         photo=Array,
+        caption=Array_msg,
         reply_markup=InlineKeyboardMarkup(
                 [[
                     InlineKeyboardButton(
@@ -65,7 +63,6 @@ async def _Alive(_, e: Message):
                     InlineKeyboardButton(
                         "• Repo •", url="https://github.com/desinobita/TgVcUsers")
                 ]],
-        caption=Array_msg
         ),
     ) 
     except Exception as lol:         
@@ -75,16 +72,17 @@ async def _Alive(_, e: Message):
         Array_msg += f"► ᴘʏʀᴏ ᴠᴇʀsɪᴏɴ : `{pyro_vr}` \n"
         Array_msg += f"► Sᴜᴘᴘᴏʀᴛ : [Jᴏɪɴ.](https://t.me/DNHxHELL) \n"
         Array_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n\n"
-        await Message.reply_photo(
+        await e.reply_photo(
         photo=Array,
+        caption=Array_msg,
         reply_markup=InlineKeyboardMarkup(
-                [[
-                    InlineKeyboardButton(
-                        "• Channel •", url="https://t.me/ArrayCore")
-                ], [
-                    InlineKeyboardButton(
-                        "• Repo •", url="https://github.com/desinobita/TgVcUsers")
-                ]],
-        caption=Array_msg
+            [
+                [
+                    InlineKeyboardButton("• Channel •", url="https://t.me/ArrayCore"),
+                ],
+                [
+                    InlineKeyboardButton("• Repo •", url="https://github.com/desinobita/TgVcUsers"),
+                ],
+            ],
         ),
     ) 
