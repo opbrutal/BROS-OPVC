@@ -32,6 +32,7 @@ SESSION14 = os.getenv("SESSION14", None)
 SESSION15 = os.getenv("SESSION15", None)
 HNDLR = os.getenv("HNDLR", "!")
 GROUP_MODE = os.getenv("GROUP_MODE", "True")
+START_VID = os.getenv("START_VID", None)
 
 
 def make_int(str_input):
