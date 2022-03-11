@@ -1,7 +1,7 @@
 #@TheVenomXD
 
 from pyrogram import Client, filters
-from pyrogram.types import Message
+from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
 from ..utils import vcbot, SUDO_USERS, HNDLR, hl, START_VID
 
