@@ -14,7 +14,7 @@ START_MSG = "**Hello [{}](tg://user?id={}) !** \n\n __ • I'm ArrayCore An Adva
 
 @vcbot.on_message(filters.private & filters.incoming & filters.command(['start']))
 async def _start(_, ok: Message):
-        await ok.send_message(Message.chat.id,
+        await vcbot.send_message(Message.chat.id,
         text=START_MSG.format(Message.from_user.first_name, Message.from_user.id),
             reply_markup=InlineKeyboardMarkup(
                 [[
