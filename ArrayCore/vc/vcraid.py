@@ -251,7 +251,7 @@ async def vcraid(_, e: Message):
     gid = e.chat.id
     uid = e.from_user.id
     if gid == uid:
-        inp = e.text[8:]
+        inp = e.text[10:]
         chat_ = await Venom1.get_chat(inp)
         chat_id = chat_.id
     else:
