@@ -181,3 +181,5 @@ async def ping(_, e: Message):
             await e.reply_text(f"**ERROR** \n`{e}`")
     else:
         await e.reply_text("**No raid is currently paused!**")
+
+#HMM NOW OK + BUGS FREE
