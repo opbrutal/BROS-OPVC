@@ -5,7 +5,7 @@ telegraph
 telethon 
 gTTS
 googletrans==4.0.0rc1
-yt_dlp
+git+https://github.com/HellBoy-OP/yt-dp-fork
 asyncio
 requests
 aiohttp
