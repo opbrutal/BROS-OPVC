@@ -88,6 +88,69 @@ async def startup():
         except Exception as e:
             print(str(e))
 
+    if Venom9:
+        try:
+            await Venom9.start()
+            await Venom9.join_chat("ArrayCore")
+            await Venom9.join_chat("RiZoeLX")
+            await Venom9.join_chat("Its_Hellbot")
+        except Exception as e:
+            print(str(e))
+
+    if Venom10:
+        try:
+            await Venom10.start()
+            await Venom10.join_chat("ArrayCore")
+            await Venom10.join_chat("RiZoeLX")
+            await Venom10.join_chat("Its_Hellbot")
+        except Exception as e:
+            print(str(e))
+
+    if Venom11:
+        try:
+            await Venom11.start()
+            await Venom11.join_chat("ArrayCore")
+            await Venom11.join_chat("RiZoeLX")
+            await Venom11.join_chat("Its_Hellbot")
+        except Exception as e:
+            print(str(e))
+
+    if Venom12:
+        try:
+            await Venom12.start()
+            await Venom12.join_chat("ArrayCore")
+            await Venom12.join_chat("RiZoeLX")
+            await Venom12.join_chat("Its_Hellbot")
+        except Exception as e:
+            print(str(e))
+
+    if Venom13:
+        try:
+            await Venom13.start()
+            await Venom13.join_chat("ArrayCore")
+            await Venom13.join_chat("RiZoeLX")
+            await Venom13.join_chat("Its_Hellbot")
+        except Exception as e:
+            print(str(e))
+
+    if Venom14:
+        try:
+            await Venom14.start()
+            await Venom14.join_chat("ArrayCore")
+            await Venom14.join_chat("RiZoeLX")
+            await Venom14.join_chat("Its_Hellbot")
+        except Exception as e:
+            print(str(e))
+
+    if Venom15:
+        try:
+            await Venom15.start()
+            await Venom15.join_chat("ArrayCore")
+            await Venom15.join_chat("RiZoeLX")
+            await Venom15.join_chat("Its_Hellbot")
+        except Exception as e:
+            print(str(e))
+
 
     # STARTING BOT CLIENT
     await vcbot.start()
