@@ -69,7 +69,6 @@
         },
         "SUDO_USERS": {
             "description": "USER ID OF THOSE PEOPLE WHO CAN CONTROL THE BOT",
-            "value": "True",
             "required": true 
         }
     },
