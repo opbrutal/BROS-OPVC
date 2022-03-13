@@ -45,34 +45,6 @@
             "description": "Pyrogram String Session",
             "required": false
         },
-        "SESSION9": {
-            "description": "Pyrogram String Session",
-            "required": false
-        },
-        "SESSION10": {
-            "description": "Pyrogram String Session",
-            "required": false
-        },
-        "SESSION11": {
-            "description": "Pyrogram String Session",
-            "required": false
-        },
-        "SESSION12": {
-            "description": "Pyrogram String Session",
-            "required": false
-        },
-        "SESSION13": {
-            "description": "Pyrogram String Session",
-            "required": false
-        },
-        "SESSION14": {
-            "description": "Pyrogram String Session",
-            "required": false
-        },
-        "SESSION15": {
-            "description": "Pyrogram String Session",
-            "required": false
-        },
         "ALIVE_PIC": {
             "description": "Pyrogram String Session",
             "required": false
@@ -88,6 +60,16 @@
         },
         "GROUP_MODE": {
             "description": "Anyone can play, if set to True. Set it to False to restrict play access to Sudo Users/Contacts only",
+            "value": "True",
+            "required": true 
+        },
+        "BOT_TOKEN": {
+            "description": "Required To Give Commands In Bot Pm",
+            "value": "True",
+            "required": true
+        },
+        "SUDO_USERS": {
+            "description": "USER ID OF THOSE PEOPLE WHO CAN CONTROL THE BOT",
             "value": "True",
             "required": true 
         }
