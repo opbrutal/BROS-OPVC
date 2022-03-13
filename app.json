@@ -65,7 +65,6 @@
         },
         "BOT_TOKEN": {
             "description": "Required To Give Commands In Bot Pm",
-            "value": "True",
             "required": true
         },
         "SUDO_USERS": {
