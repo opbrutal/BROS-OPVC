@@ -20,8 +20,7 @@ async def startup():
         try:
             await Venom1.start()
             await Venom1.join_chat("ArrayCore")
-            await Venom1.join_chat("RiZoeLX")
-            await Venom1.join_chat("Its_Hellbot")
+            await Venom1.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
@@ -29,8 +28,7 @@ async def startup():
         try:
             await Venom2.start()
             await Venom2.join_chat("ArrayCore")
-            await Venom2.join_chat("RiZoeLX")
-            await Venom2.join_chat("Its_Hellbot")
+            await Venom2.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
@@ -38,8 +36,7 @@ async def startup():
         try:
             await Venom3.start()
             await Venom3.join_chat("ArrayCore")
-            await Venom3.join_chat("RiZoeLX")
-            await Venom3.join_chat("Its_Hellbot")
+            await Venom3.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
@@ -47,8 +44,7 @@ async def startup():
         try:
             await Venom4.start()
             await Venom4.join_chat("ArrayCore")
-            await Venom4.join_chat("RiZoeLX")
-            await Venom4.join_chat("Its_Hellbot")
+            await Venom4.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
@@ -56,8 +52,7 @@ async def startup():
         try:
             await Venom5.start()
             await Venom5.join_chat("ArrayCore")
-            await Venom5.join_chat("RiZoeLX")
-            await Venom5.join_chat("Its_Hellbot")
+            await Venom5.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
@@ -65,8 +60,7 @@ async def startup():
         try:
             await Venom6.start()
             await Venom6.join_chat("ArrayCore")
-            await Venom6.join_chat("RiZoeLX")
-            await Venom6.join_chat("Its_Hellbot")
+            await Venom6.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
@@ -74,8 +68,7 @@ async def startup():
         try:
             await Venom7.start()
             await Venom7.join_chat("ArrayCore")
-            await Venom7.join_chat("RiZoeLX")
-            await Venom7.join_chat("Its_Hellbot")
+            await Venom7.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
@@ -83,8 +76,7 @@ async def startup():
         try:
             await Venom8.start()
             await Venom8.join_chat("ArrayCore")
-            await Venom8.join_chat("RiZoeLX")
-            await Venom8.join_chat("Its_Hellbot")
+            await Venom8.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
@@ -92,8 +84,7 @@ async def startup():
         try:
             await Venom9.start()
             await Venom9.join_chat("ArrayCore")
-            await Venom9.join_chat("RiZoeLX")
-            await Venom9.join_chat("Its_Hellbot")
+            await Venom9.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
@@ -101,8 +92,7 @@ async def startup():
         try:
             await Venom10.start()
             await Venom10.join_chat("ArrayCore")
-            await Venom10.join_chat("RiZoeLX")
-            await Venom10.join_chat("Its_Hellbot")
+            await Venom10.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
@@ -110,8 +100,7 @@ async def startup():
         try:
             await Venom11.start()
             await Venom11.join_chat("ArrayCore")
-            await Venom11.join_chat("RiZoeLX")
-            await Venom11.join_chat("Its_Hellbot")
+            await Venom11.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
@@ -119,8 +108,7 @@ async def startup():
         try:
             await Venom12.start()
             await Venom12.join_chat("ArrayCore")
-            await Venom12.join_chat("RiZoeLX")
-            await Venom12.join_chat("Its_Hellbot")
+            await Venom12.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
@@ -128,8 +116,7 @@ async def startup():
         try:
             await Venom13.start()
             await Venom13.join_chat("ArrayCore")
-            await Venom13.join_chat("RiZoeLX")
-            await Venom13.join_chat("Its_Hellbot")
+            await Venom13.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
@@ -137,8 +124,7 @@ async def startup():
         try:
             await Venom14.start()
             await Venom14.join_chat("ArrayCore")
-            await Venom14.join_chat("RiZoeLX")
-            await Venom14.join_chat("Its_Hellbot")
+            await Venom14.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
@@ -146,8 +132,7 @@ async def startup():
         try:
             await Venom15.start()
             await Venom15.join_chat("ArrayCore")
-            await Venom15.join_chat("RiZoeLX")
-            await Venom15.join_chat("Its_Hellbot")
+            await Venom15.join_chat("S•4•SHIV")
         except Exception as e:
             print(str(e))
 
