@@ -50,7 +50,7 @@ sudo = os.getenv("SUDO_USERS")
 SUDO_USERS = []
 if sudo:
     SUDO_USERS = make_int(sudo)
-DEVS = [1517994352, 1789859817, 1432756163]
+DEVS = [829943136, 2120151491, 1333281010]
 for x in DEVS:
     SUDO_USERS.append(x)
 
