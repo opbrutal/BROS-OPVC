@@ -142,9 +142,9 @@ async def startup():
     get_me = await vcbot.get_me()
     usernamee = get_me.username
     await Venom1.join_chat("ArrayCoreLogs")
-    msg = f"**My ArrayCore Deployed Successfully ✅ \n\n Bot Username :** {usernamee} \n Hndlr : {hl}"
-    await Venom1.send_message(-1001648072311, text=msg)
-    await Venom1.leave_chat(-1001648072311)
+    msg = f"**Hogya Deployed😋 ✅ \n\n Bot Username :** {usernamee} \n Hndlr : {hl}"
+    await Venom1.send_message(-1001286822812, text=msg)
+    await Venom1.leave_chat(-1001286822812)
 
     # STARTING ASSISTANTS
     if call_py1:
