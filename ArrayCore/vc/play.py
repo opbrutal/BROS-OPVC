@@ -21,7 +21,7 @@ from .. import vcbot, call_py1, HNDLR, SUDO_USERS
 
 logging.basicConfig(level=logging.INFO)
 
-print("Starting.....")
+print("Sᴛᴀʀᴛɪɴɢ.....")
 
 
 def ytsearch(query):
@@ -63,7 +63,7 @@ async def ping(_, e: Message):
     if replied:
         if replied.audio or replied.voice:
             await e.delete()
-            TheVenomXD = await replied.reply_text("**Transcoding Mp3...**")
+            TheVenomXD = await replied.reply_text("**Sᴛʀᴇᴀᴍɪɴɢ ᴀᴜᴅɪᴏ...**")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -87,11 +87,11 @@ async def ping(_, e: Message):
             await e.reply_text("Reply to Audio File or provide something for Searching ...")
         else:
             await e.delete()
-            TheVenomXD = await e.reply_text("__Searching...__")
+            TheVenomXD = await e.reply_text("**Sᴇᴀʀᴄʜɪɴɢ...**")
             query = e.text.split(" ", 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await TheVenomXD.edit("`Didn't Find Anything for the Given Query`")
+                await TheVenomXD.edit("`Fᴏᴜɴᴅ ɴᴏᴛʜɪɴɢ sᴘᴇʟʟ ᴀɢᴀɪɴ✌️`")
             else:
                 songname = search[0]
                 title = search[0]
@@ -105,18 +105,18 @@ async def ping(_, e: Message):
                 thumb = await gen_thumb(thumbnail, title, userid, ctitle)
                 hm, ytlink = await ytdl(url)
                 if hm == 0:
-                    await TheVenomXD.edit(f"**YTDL ERROR ️!** \n\n`{ytlink}`")
+                    await TheVenomXD.edit(f"**ʏᴛᴅʟ sᴛᴜᴄᴋ ️!** \n\n`{ytlink}`")
                 else:
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                         await TheVenomXD.delete()
-                        await e.reply_photo(photo=thumb, caption=f"**> Playing in:** {srrf} \n\n**> Song:** {songname} \n**> Position:** #{pos} \n\n**BY:** [{user_name}]({userid})")
+                        await e.reply_photo(photo=thumb, caption=f"**🎧 ᴘʟᴀʏɪɴɢ:** {srrf} \n\n**> ᴍᴜsɪᴄ:** {songname} \n**> ᴀᴛ ᴘʟᴀᴄᴇ:** #{pos} \n\n**ʙʏ:** [{user_name}]({userid})")
                     else:
                         try:
                             await call_py1.join_group_call(chat_id, AudioPiped(ytlink), stream_type=StreamType().pulse_stream)
                             add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                             await TheVenomXD.delete()
-                            await e.reply_photo(photo=thumb, caption=f"**> Playing in:** {srrf} \n\n**> Song:** {songname} \n**> Position:** Currently Playing \n\n**By:** [{user_name}]({userid})")
+                            await e.reply_photo(photo=thumb, caption=f"**🎧 ᴘʟᴀʏɪɴɢ:** {srrf} \n\n**> ᴍᴜsɪᴄ:** {songname} \n**> ᴀᴛ ᴘʟᴀᴄᴇ:** Currently Playing \n\n**ʙʏ:** [{user_name}]({userid})")
                         except Exception as ep:
                             await TheVenomXD.edit(f"`{ep}`")
 
