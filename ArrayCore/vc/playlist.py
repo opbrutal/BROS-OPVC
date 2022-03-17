@@ -13,7 +13,7 @@ async def ping(_, e: Message):
         chat_queue = get_queue(chat_id)
         if len(chat_queue) == 1:
             await e.delete()
-            await e.reply_text(f"**Playing In {chat_.title}**")
+            await e.reply_text(f"**ᴘʟᴀʏɪɴɢ {chat_.title}**")
         else:
             QUE = f"**Playing In {chat_.title}**"
             l = len(chat_queue)
@@ -24,4 +24,4 @@ async def ping(_, e: Message):
                 QUE = QUE + "\n" + f"**#{x}** - [{hmm}]({hmmm}) | `{hmmmm}`\n"
             await e.reply_text(QUE, disable_web_page_preview=True)
     else:
-        await e.reply_text("__Doesn't play anything__")
+        await e.reply_text("**ɴᴏᴛʜɪɴɢ ɪs sᴛʀᴇᴀᴍɪɴɢ**")
