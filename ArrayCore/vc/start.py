@@ -1,4 +1,4 @@
-#@TheVenomXD
+
 
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
@@ -10,7 +10,7 @@ from .. import vcbot, SUDO_USERS, HNDLR, hl, START_VID
    # video=START_VID,
   # await vcbot.send_video(e.chat.id, video, f"Vc Raid Bot Is Working Fine. \nSend `{hl}help` To Know Your Commands. \n\n< Powered By @ArrayCore >")
 
-START_MSG = "**Hello [{}](tg://user?id={}) !** \n\n __ • I'm ArrayCore An Advance And Simple Group Voice Call Bot__ \n\n **Click Below Buttons for More Info**",         
+START_MSG = "**Hᴇʏᴀ [{}](tg://user?id={}) !** \n\n __ • ɪᴛs ʙʀᴏᴛʜᴇʀs ᴠᴄ sᴛʀᴇᴀᴍ ʙᴏᴛ ᴇɴᴊᴏʏ ᴡɪᴛʜ ᴛʜɪs\n\n **ᴄʟɪᴄᴋ ʙᴜᴛᴛᴏɴs ғᴏʀ ɪɴғᴏ**",         
 Hn = "/"
 @vcbot.on_message(filters.private & filters.incoming & filters.command(['start'], prefixes=Hn))
 async def _start(_, ok: Message):
@@ -19,11 +19,11 @@ async def _start(_, ok: Message):
             reply_markup=InlineKeyboardMarkup(
                 [[
                     InlineKeyboardButton(
-                        "• Channel •", url="https://t.me/ArrayCore"),
+                        "• ᴄʜᴀɴɴᴇʟ •", url="https://t.me/NISHU_BOTHUB"),
                     InlineKeyboardButton(
-                        "• Support •", url="https://t.me/DNHxHELL")
+                        "• sᴜᴘᴘᴏʀᴛ •", url="https://t.me/The_Brothers_group")
                 ], [
                     InlineKeyboardButton(
-                        "• Repo •", url="https://github.com/desinobita/TgVcUsers")
+                        "• sᴏᴜʀᴄᴇ •", url="https://t.me/shivamdemon")
                 ]]
             ))
