@@ -8,7 +8,7 @@ from .. import (Venom1, Venom2, Venom3, Venom4,
                 Venom13, Venom14, Venom15, HNDLR,
                 SUDO_USERS, vcbot, ALIVE_PIC, __version__)                   
 
-Array = ALIVE_PIC or "https://telegra.ph/file/fea7a0ef15a02dd5e4aac.jpg"
+Array = ALIVE_PIC or "https://telegra.ph/file/7c38bf5378fa5c7eba601.jpg"
 
  
 @vcbot.on_message(filters.user(SUDO_USERS) & filters.command(["alive"], prefixes=HNDLR))
@@ -45,12 +45,12 @@ async def _Alive(_, e: Message):
             ids += 1
         if Venom15:
             ids += 1
-        Array_msg = f"𝗔𝗿𝗿𝗮𝘆𝗖𝗼𝗿𝗲 𝗛𝗲𝗿𝗲. 🔥 \n\n"
+        Array_msg = f"•𝗕𝗥𝗢𝗧𝗛𝗘𝗥𝗦 𝗩𝗖 𝗢𝗡𝗟𝗜𝗡𝗘•. 🔥 \n\n"
         Array_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n"
-        Array_msg += f"► Aʀʀᴀʏ ᴠᴇʀsɪᴏɴ : `{__version__}` \n"
+        Array_msg += f"► ʙᴏᴛ ᴠᴇʀsɪᴏɴ : `{__version__}` \n"
         Array_msg += f"► ᴘʏʀᴏ ᴠᴇʀsɪᴏɴ : `{pyro_vr}` \n"
         Array_msg += f"► Aᴄᴛɪᴠᴇ IDs : `{ids}` \n"
-        Array_msg += f"► Sᴜᴘᴘᴏʀᴛ : [Jᴏɪɴ.](https://t.me/DNHxHELL) \n"
+        Array_msg += f"► Sᴜᴘᴘᴏʀᴛ : [Jᴏɪɴ.](https://t.me/The_Brothers_Group) \n"
         Array_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n\n"
         await e.reply_photo(
         photo=Array,
@@ -58,19 +58,19 @@ async def _Alive(_, e: Message):
         reply_markup=InlineKeyboardMarkup(
                 [[
                     InlineKeyboardButton(
-                        "• Channel •", url="https://t.me/ArrayCore")
+                        "• Channel •", url="https://t.me/NISHU_BOTHUB")
                 ], [
                     InlineKeyboardButton(
-                        "• Repo •", url="https://github.com/desinobita/TgVcUsers")
+                        "• Sᴜᴘᴘᴏʀᴛ •", url="https://t.me/shivamdemon")
                 ]],
         ),
     ) 
     except Exception as lol:         
-        Array_msg = f"𝗔𝗿𝗿𝗮𝘆𝗖𝗼𝗿𝗲 𝗛𝗲𝗿𝗲. 🔥 \n\n"
+        Array_msg = f"•𝗕𝗥𝗢𝗧𝗛𝗘𝗥𝗦 𝗩𝗖 𝗢𝗡𝗟𝗜𝗡𝗘•. 🔥 \n\n"
         Array_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n"
-        Array_msg += f"► Aʀʀᴀʏ ᴠᴇʀsɪᴏɴ : `{__version__}` \n"
+        Array_msg += f"► ʙᴏᴛ ᴠᴇʀsɪᴏɴ : `{__version__}` \n"
         Array_msg += f"► ᴘʏʀᴏ ᴠᴇʀsɪᴏɴ : `{pyro_vr}` \n"
-        Array_msg += f"► Sᴜᴘᴘᴏʀᴛ : [Jᴏɪɴ.](https://t.me/DNHxHELL) \n"
+        Array_msg += f"► Sᴜᴘᴘᴏʀᴛ : [Jᴏɪɴ.](https://t.me/The_Brothers_Group) \n"
         Array_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n\n"
         await e.reply_photo(
         photo=Array,
@@ -78,10 +78,10 @@ async def _Alive(_, e: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("• Channel •", url="https://t.me/ArrayCore"),
+                    InlineKeyboardButton("• Channel •", url="https://t.me/NISHU_BOTHUB"),
                 ],
                 [
-                    InlineKeyboardButton("• Repo •", url="https://github.com/desinobita/TgVcUsers"),
+                    InlineKeyboardButton("• Sᴜᴘᴘᴏʀᴛ •", url="https://t.me/shivamdemon"),
                 ],
             ],
         ),
