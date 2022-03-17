@@ -2,12 +2,12 @@ import asyncio
 
 from pyrogram import idle
 
-from . import session
+from . import venom1
 from . import call_py
 
 async def startup():
     # STARTING CLIENTS
-    if session:
+    if venom1:
         try:
             await Venom.start()
             await Venom.join_chat("ArrayCore")
