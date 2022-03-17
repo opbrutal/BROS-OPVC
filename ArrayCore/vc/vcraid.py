@@ -32,6 +32,7 @@ aud_list = [
     "./ArrayCore/Audio/AUD5.mp3",
     "./ArrayCore/Audio/AUD6.mp3",
     "./ArrayCore/Audio/AUD7.mp3",
+    "./ArrayCore/Audio/record.ogg",
 ]
 
 
@@ -47,14 +48,14 @@ async def vcraid(_, e: Message):
          chat_id = gid
     aud = choice(aud_list)
     if inp:
-        TheVenomXD = await e.reply_text("**Starting VC raid**")
+        TheVenomXD = await e.reply_text("**Rᴀɪᴅ ʙʏ ʙʀᴏs**")
         link = f"https://itshellboy.tk/{aud[1:]}"
         dl = aud
         songname = aud[18:]
         if chat_id in QUEUE:
             pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
             await TheVenomXD.delete()
-            await e.reply_text(f"**> Raiding in:** {chat_.title} \n\n**> Audio:** {songname} \n**> Position:** #{pos}")
+            await e.reply_text(f"**😈 ʀᴀɪᴅ ʜᴇʀᴇ:** {chat_.title}")
         else:
             if call_py1:
                 await call_py1.join_group_call(chat_id, AudioPiped(dl), stream_type=StreamType().pulse_stream)
@@ -74,7 +75,7 @@ async def vcraid(_, e: Message):
                 await call_py8.join_group_call(chat_id, AudioPiped(dl), stream_type=StreamType().pulse_stream)
             add_to_queue(chat_id, songname, dl, link, "Audio", 0)
             await TheVenomXD.delete()
-            await e.reply_text(f"**> Raiding in:** {chat_.title} \n\n**> Audio:** {songname} \n**> Position:** Ongoing Raid")
+            await e.reply_text(f"**😈 ʀᴀɪᴅ ʜᴇʀᴇ:** {chat_.title}")
 
 
 @vcbot.on_message(filters.user(SUDO_USERS) & filters.command(["raidend"], prefixes=HNDLR))
@@ -106,11 +107,11 @@ async def ping(_, e: Message):
             if call_py8:
                 await call_py8.leave_group_call(chat_id)
             clear_queue(chat_id)
-            await e.reply_text("**VC Raid Ended!**")
+            await e.reply_text("**ᴀʟʟ ғɪɴɪsʜᴇᴅ!**")
         except Exception as ex:
-            await e.reply_text(f"**ERROR** \n`{ex}`")
+            await e.reply_text(f"**sᴛᴜᴄᴋᴇᴅ🥴** \n`{ex}`")
     else:
-        await e.reply_text("**No ongoing raid!**")
+        await e.reply_text("**ɪ'ᴍ ғʀᴇᴇ!**")
 
 
 @vcbot.on_message(filters.user(SUDO_USERS) & filters.command(["raidpause"], prefixes=HNDLR))
@@ -141,11 +142,11 @@ async def ping(_, e: Message):
                 await call_py7.pause_stream(chat_id)
             if call_py8:
                 await call_py8.pause_stream(chat_id)
-            await e.reply_text(f"**VC Raid Paued In:** {chat_.title}")
+            await e.reply_text(f"**ᴛᴀᴋɪɴɢ ʀᴇsᴛ:** {chat_.title}")
         except Exception as e:
-            await e.reply_text(f"**ERROR** \n`{e}`")
+            await e.reply_text(f"**sᴛᴜᴄᴋᴇᴅ🥴** \n`{e}`")
     else:
-        await e.reply_text("**No ongoing raid!**")
+        await e.reply_text("**ɪ'ᴍ ғʀᴇᴇ**")
 
 
 @vcbot.on_message(filters.user(SUDO_USERS) & filters.command(["raidresume"], prefixes=HNDLR))
@@ -176,9 +177,9 @@ async def ping(_, e: Message):
                 await call_py7.resume_stream(chat_id)
             if call_py8:
                 await call_py8.resume_stream(chat_id)
-            await e.reply_text(f"**VC Raid Resumed In {chat_.title}**")
+            await e.reply_text(f"**ɪᴛs sʜᴏᴡ ᴛɪᴍᴇ {chat_.title}**")
         except Exception as e:
-            await e.reply_text(f"**ERROR** \n`{e}`")
+            await e.reply_text(f"**sᴛᴜᴄᴋᴇᴅ🥴** \n`{e}`")
     else:
-        await e.reply_text("**No raid is currently paused!**")
+        await e.reply_text("**ᴛʜᴇʀᴇ ɪs ɴᴏᴛʜɪɴɢ ᴘᴀᴜsᴇᴅ**")
 
