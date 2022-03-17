@@ -10,9 +10,9 @@ from time import time
 
 from .. import vcbot, HNDLR, SUDO_USERS, HELP_DICT
 
-HELP = f"""Help Menu For VcRaid By [Akash](https/t.me/TheVenomXD).
+HELP = f"""Help Menu For VcRaid By [𝚂•4•𝚂𝚑𝚒𝚟](https/t.me/shivamdemon).
 
-All commands supported by me is listed here with detailed explanations and usage.
+All commands Given Below ✌️Any query help u 🔜.
 """
 
   
