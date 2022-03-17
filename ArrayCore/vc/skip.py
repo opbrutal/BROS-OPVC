@@ -12,14 +12,14 @@ async def ping(_, e: Message):
     if len(e.command) < 2:
         op = await skip_current_song(chat_id)
         if op == 0:
-            await e.reply_text("**There's nothing in the queue to skip!**")
+            await e.reply_text("**Nᴏᴛʜɪɴɢ ɪɴ ǫᴜᴇᴜᴇ**")
         elif op == 1:
-            await e.reply_text("**Empty Queue, Leaving Voice Chat**")
+            await e.reply_text("**Eᴍᴘᴛʏ ǫᴜᴇᴜᴇ, ʟᴇᴀᴠᴇ ᴠᴄ**")
         else:
-            await e.reply_text(f"**Playing In {chat_.title}**")
+            await e.reply_text(f"**ᴘʟᴀʏɪɴɢ🤗 {chat_.title}**")
     else:
         skip = e.text.split(None, 1)[1]
-        OP = "**Removed the following songs from the Queue: -**"
+        OP = "**ᴄʟᴇᴀʀ ǫᴜᴇᴜᴇ sᴏɴɢs: -**"
         if chat_id in QUEUE:
             items = [int(x) for x in skip.split(" ") if x.isdigit()]
             items.sort(reverse=True)
