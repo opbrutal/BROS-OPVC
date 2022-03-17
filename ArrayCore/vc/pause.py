@@ -12,9 +12,9 @@ async def ping(_, e: Message):
     if chat_id in QUEUE:
         try:
             await call_py1.pause_stream(chat_id)
-            await e.reply_text(f"**Paued In:** {chat_.title}")
+            await e.reply_text(f"**Paused 😒:** {chat_.title}")
         except Exception as e:
             await e.reply_text(f"**ERROR** \n`{e}`")
     else:
-        await e.reply_text("**Nothing is playing!**")
+        await e.reply_text("**Nothing is playing ❌**")
       
