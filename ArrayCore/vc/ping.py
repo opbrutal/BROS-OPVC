@@ -39,4 +39,4 @@ async def ping(_, e: Message):
     x = await e.reply_text("**Ping !!**")
     et = datetime.datetime.now()
     pt = (et-st).microseconds / 1000
-    await x.edit_text(f"**ＰＯＮＧ** \n\n__Ping:__ `{pt} ms` \n__Uptime:__ `{uptime}`")
+    await x.edit_text(f"**𝕻𝖔𝖓𝖌🐬** \n\n__Ping:__ `{pt} ms` \n__Uptime:__ `{uptime}`")
